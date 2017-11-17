@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Phoebe&#39;s Blog">
 <meta property="og:description" content="前言Web浏览器中的网页的内容最根本的是文字，但网页中的内容在大多数时间都是风格文本而非纯文本。一个典型的网页基于集中技术（如CSS，JavaScript, Flash, AJAX, JSON）来控制终端用户的所见，但最根本的技术的是开发者用HTML来写网页，若没有HTML则没有网页。浏览器通过阅读HTML内容开始将网页展示在客户端设备上。 HTML的内容实在是太多了，今天写下这篇文章，先把所有的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-17T12:53:57.899Z">
+<meta property="og:updated_time" content="2017-11-17T12:56:00.791Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【HTML标签介绍】">
 <meta name="twitter:description" content="前言Web浏览器中的网页的内容最根本的是文字，但网页中的内容在大多数时间都是风格文本而非纯文本。一个典型的网页基于集中技术（如CSS，JavaScript, Flash, AJAX, JSON）来控制终端用户的所见，但最根本的技术的是开发者用HTML来写网页，若没有HTML则没有网页。浏览器通过阅读HTML内容开始将网页展示在客户端设备上。 HTML的内容实在是太多了，今天写下这篇文章，先把所有的">
@@ -450,9 +450,20 @@
 <td style="text-align:left"><code>&lt;ol&gt;</code></td>
 <td>HTML <code>&lt;ol&gt;</code> 元素 表示多个有序列表项，通常渲染为有带编号的列表。</td>
 </tr>
+<tr>
+<td style="text-align:left"><code>&lt;p&gt;</code></td>
+<td>HTML <code>&lt;p&gt;</code>元素（或者说 HTML 段落元素）表示文本的一个段落。该元素通常表现为一整块与相邻文本分离的文本，或以垂直的空白隔离或以首行缩进。另外，<p> 是块级元素。</p></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&lt;pre&gt;</code></td>
+<td>HTML <code>&lt;pre&gt;</code> 元素表示预定义格式文本。在该元素中的文本通常按照原文件中的编排，以等宽字体的形式展现出来，文本中的空白符（比如空格和换行符）都会显示出来。(紧跟在 <code>&lt;pre&gt;</code>开始标签后的换行符也会被省略)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&lt;ul&gt;</code></td>
+<td>The HTML<code>&lt;ul&gt;</code> 元素 ( 或 HTML 无序列表元素） 代表多项的无序列表，即无数值排序项的集合，且它们在列表中的顺序是没有意义的。通常情况下，无序列表项的头部可以是几种形式，如一个点，一个圆形或方形。头部的风格并不是在页面的HTML描述定义, 但在其相关的CSS 可以用 list-style-type 属性。</td>
+</tr>
 </tbody>
 </table>
-<p><code>&lt;p&gt;</code>HTML <code>&lt;p&gt;</code>元素（或者说 HTML 段落元素）表示文本的一个段落。该元素通常表现为一整块与相邻文本分离的文本，或以垂直的空白隔离或以首行缩进。另外，</p><p> 是块级元素。<br><code>&lt;pre&gt;</code>|HTML <code>&lt;pre&gt;</code> 元素表示预定义格式文本。在该元素中的文本通常按照原文件中的编排，以等宽字体的形式展现出来，文本中的空白符（比如空格和换行符）都会显示出来。(紧跟在 <code>&lt;pre&gt;</code>开始标签后的换行符也会被省略)<br><code>&lt;ul&gt;</code>|The HTML<code>&lt;ul&gt;</code> 元素 ( 或 HTML 无序列表元素） 代表多项的无序列表，即无数值排序项的集合，且它们在列表中的顺序是没有意义的。通常情况下，无序列表项的头部可以是几种形式，如一个点，一个圆形或方形。头部的风格并不是在页面的HTML描述定义, 但在其相关的CSS 可以用 list-style-type 属性。</p>
 <h3 id="内联文本语义"><a href="#内联文本语义" class="headerlink" title="内联文本语义"></a>内联文本语义</h3><p>使用 HTML 内联文本语义(Inline text semantics)定义语句，结构，可以是一个词，一段，或任意风格的文字。</p>
 <table>
 <thead>
@@ -756,9 +767,29 @@
 <td style="text-align:left"><code>&lt;datalist&gt;</code></td>
 <td>HTML Datalist 元素 (<code>&lt;datalist&gt;</code>) 包含了一组<code>&lt;option&gt;</code>元素,这些元素表示其它表单控件可选值.</td>
 </tr>
+<tr>
+<td style="text-align:left"><code>&lt;fieldset&gt;</code></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&lt;form&gt;</code></td>
+<td>HTML<code>&lt;form&gt;</code> 元素 表示了文档中的一个区域，这个区域包含有交互控制元件，用来向web服务器提交信息。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&lt;input&gt;</code></td>
+<td>HTML<code>&lt;input&gt;</code> 元素用于为基于Web的表单创建交互式控件，以便接受来自用户的数据。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&lt;label&gt;</code></td>
+<td>HTML 元素表示用户界面中项目的标题。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&lt;legend&gt;</code></td>
+<td>HTML的<code>&lt;legend&gt;</code>元素（也称为HTML的域说明元素（or HMTL</td>
+</tr>
 </tbody>
 </table>
-<p><code>&lt;fieldset&gt;</code><br><code>&lt;form&gt;</code>|HTML<code>&lt;form&gt;</code> 元素 表示了文档中的一个区域，这个区域包含有交互控制元件，用来向web服务器提交信息。<br><code>&lt;input&gt;</code>|HTML<code>&lt;input&gt;</code> 元素用于为基于Web的表单创建交互式控件，以便接受来自用户的数据。<br><code>&lt;label&gt;</code>|HTML 元素表示用户界面中项目的标题。<br><code>&lt;legend&gt;</code>|HTML的<code>&lt;legend&gt;</code>元素（也称为HTML的域说明元素（or HMTL<br> Legend Field Element））代表一个用于表示它的父元素<code>&lt;fieldset&gt;</code>的内容的标题。<code>&lt;/legend&gt;</code><br><code>&lt;meter&gt;</code>|HTML<code>&lt;meter&gt;</code>元素用来显示已知范围的标量值或者分数值。<br><code>&lt;optgroup&gt;</code>|在一个web表单中, HTML元素 <code>&lt;optgroup&gt;</code> 会创建包含在一个 <code>&lt;select&gt;</code>元素中的一组选项<br><code>&lt;option&gt;</code>|在web表单中,  HTML元素 <code>&lt;option&gt;</code>  用于定义在<code>&lt;select&gt;</code>, <code>&lt;optgroup&gt;</code> 或<code>&lt;datalist&gt;</code> 元素中包含的项.<code>&lt;option&gt;</code>可以在弹出窗口和 html 文档中的其他项目列表中表示菜单项。<br><code>&lt;output&gt;</code>|HTML 标签定义一个用户的操作或者计算的结果。<br><code>&lt;progress&gt;</code>|HTML中的progress (<code>&lt;progress&gt;</code>) 元素用来显示一项任务的完成进度.虽然规范中没有规定该元素具体如何显示,浏览器开发商可以自己决定,但通常情况下,该元素都显示为一个进度条形式.<br><code>&lt;select&gt;</code>|HTML select (<code>&lt;select&gt;</code>) 元素是一种表单控件，可创建选项菜单。菜单内的选项为<code>&lt;option&gt;</code> , 可以由 <code>&lt;optgroup&gt;</code> 元素分组。选项可以被用户预先选择。<br><code>&lt;textarea&gt;</code>|HTML <code>&lt;textarea&gt;</code> 元素表示一个多行纯文本编辑控件。</p>
+<p> Legend Field Element））代表一个用于表示它的父元素<code>&lt;fieldset&gt;</code>的内容的标题。<code>&lt;/legend&gt;</code><br><code>&lt;meter&gt;</code>|HTML<code>&lt;meter&gt;</code>元素用来显示已知范围的标量值或者分数值。<br><code>&lt;optgroup&gt;</code>|在一个web表单中, HTML元素 <code>&lt;optgroup&gt;</code> 会创建包含在一个 <code>&lt;select&gt;</code>元素中的一组选项<br><code>&lt;option&gt;</code>|在web表单中,  HTML元素 <code>&lt;option&gt;</code>  用于定义在<code>&lt;select&gt;</code>, <code>&lt;optgroup&gt;</code> 或<code>&lt;datalist&gt;</code> 元素中包含的项.<code>&lt;option&gt;</code>可以在弹出窗口和 html 文档中的其他项目列表中表示菜单项。<br><code>&lt;output&gt;</code>|HTML 标签定义一个用户的操作或者计算的结果。<br><code>&lt;progress&gt;</code>|HTML中的progress (<code>&lt;progress&gt;</code>) 元素用来显示一项任务的完成进度.虽然规范中没有规定该元素具体如何显示,浏览器开发商可以自己决定,但通常情况下,该元素都显示为一个进度条形式.<br><code>&lt;select&gt;</code>|HTML select (<code>&lt;select&gt;</code>) 元素是一种表单控件，可创建选项菜单。菜单内的选项为<code>&lt;option&gt;</code> , 可以由 <code>&lt;optgroup&gt;</code> 元素分组。选项可以被用户预先选择。<br><code>&lt;textarea&gt;</code>|HTML <code>&lt;textarea&gt;</code> 元素表示一个多行纯文本编辑控件。</p>
 <h3 id="交互元素"><a href="#交互元素" class="headerlink" title="交互元素"></a>交互元素</h3><p>HTML 提供了一系列有助于创建交互式用户界面对象的元素。</p>
 <table>
 <thead>
