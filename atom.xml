@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-25T09:56:48.417Z</updated>
+  <updated>2017-11-25T12:18:55.969Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>内联、块级元素的高度和文档流</title>
+    <link href="http://yoursite.com/2017/11/25/%E5%86%85%E8%81%94%E3%80%81%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E7%9A%84%E9%AB%98%E5%BA%A6%E5%92%8C%E6%96%87%E6%A1%A3%E6%B5%81/"/>
+    <id>http://yoursite.com/2017/11/25/内联、块级元素的高度和文档流/</id>
+    <published>2017-11-25T11:53:07.000Z</published>
+    <updated>2017-11-25T12:18:55.969Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="内联元素的文档流"><a href="#内联元素的文档流" class="headerlink" title="内联元素的文档流"></a>内联元素的文档流</h2><p>先写十个<code>span</code>，并给这十个<code>span</code>加上样式，现在可以看到这十个<code>span</code>的方向是依次从左往右排开的。然后把网页拉到最外边界宽度最宽时，可以看到右边<code>文字10</code>已经断成两截了，并且自动换行继续从左往右散开。说明内联元素流动方向是从左往右流动的。</p><p><img src="http://a3.qpic.cn/psb?/V149ONjw3gE9gi/1Mnlbjd1pEjJQlcFYAz1QwaAFutH9VyPksLpQdRbBdI!/b/dPIAAAAAAAAA&amp;bo=yASSAQAAAAADB30!&amp;rf=viewer_4" alt="img1"></p><h2 id="块级元素的文档流"><a href="#块级元素的文档流" class="headerlink" title="块级元素的文档流"></a>块级元素的文档流</h2><p>我们再写十个<code>div</code>，也给这十个<code>div</code>加上边框，下图可以看到，如果是块级元素，就不从左往右流动了；而是每一个块都占一行。若是再增加一个新的div进来，就会另起一行继续从上往下流动。说明块级元素的流动方向是从上往下依次流动的。</p><p><img src="http://a1.qpic.cn/psb?/V149ONjw3gE9gi/i1zwytXTyKLVI9f1RKmF*WxUOKiHpJ1TzTgF*wI8LQI!/b/dPMAAAAAAAAA&amp;bo=zAQNAgAAAAADAOI!&amp;rf=viewer_4" alt="img2"></p><h2 id="内联元素：英文和中文的流动"><a href="#内联元素：英文和中文的流动" class="headerlink" title="内联元素：英文和中文的流动"></a>内联元素：英文和中文的流动</h2><p>现在把<code>span</code>里的内容换成一个长的英文串，再把网页拉到极限最宽。如下图，这说明了当一个内联元素里的内容为中文时，到达宽度极限的时候会自动换行；而当内联元素为英文，到达宽度极限时并不会换行，而是直接缩进了。</p><p><img src="http://a1.qpic.cn/psb?/V149ONjw3gE9gi/EAAAhC4qIkruSyIKbTsQPtRcyRFJX86gSU*neSA4IdU!/b/dPMAAAAAAAAA&amp;bo=zAQQAgAAAAADB*g!&amp;rf=viewer_4" alt="img3"></p><p>如果内联元素是一个很长的英文串，在默认情况下是不会分开的，若要解决这类问题，可以给这个元素加上一个属性：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">word-break</span><span class="selector-pseudo">:break-all</span>;<span class="comment">/*把单词分断*/</span></span><br></pre></td></tr></table></figure></p><h2 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h2><p>若要让两个块级元素不上下分行，使之并排在同一行里，或像内联元素一样依次连起来，可以用两种办法<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>：<span class="selector-tag">inline-block</span>; 或 </span><br><span class="line"><span class="selector-tag">float</span><span class="selector-pseudo">:left</span>；</span><br></pre></td></tr></table></figure></p><p><img src="http://a3.qpic.cn/psb?/V149ONjw3gE9gi/0dRLvGDfD*I.hHRNMeyjdorUiwaUZuX1SdFuVUl6vTc!/b/dPIAAAAAAAAA&amp;bo=ygQ3AgAAAAADAN4!&amp;rf=viewer_4" alt="img4"></p><h2 id="块级元素和内联元素的高度"><a href="#块级元素和内联元素的高度" class="headerlink" title="块级元素和内联元素的高度"></a>块级元素和内联元素的高度</h2><ul><li><p>块级元素<br>块级元素的高度比较好理解，是由它内部文档流元素的总和决定的。</p></li><li><p>那么，内联元素的高度是由什么决定的呢？<br>我们先给<code>span</code>一个<code>font-size为100px</code>，现在看看图片左边，能看出来现在这个<code>hug</code>的像素是多高吗？</p></li></ul><p><img src="http://a1.qpic.cn/psb?/V149ONjw3gE9gi/BuJcHr.d524nFwE.xuuj*63c8Dg7CLFGUJdMWQqW48k!/b/dPMAAAAAAAAA&amp;bo=zARJAgAAAAADAKY!&amp;rf=viewer_4" alt="img5"></p><p>现在用尺子量一下，就可以看到这个<code>hug</code>的高度是97.5。并不足100。</p><p><img src="http://a3.qpic.cn/psb?/V149ONjw3gE9gi/DRQaoV96aC9Y4eclJUCc.xUcVZ06E*ZXyAl54*RCRZs!/b/dPIAAAAAAAAA&amp;bo=zAT5AQAAAAADABU!&amp;rf=viewer_4" alt="img6"></p><p>我们再加两个中文字<code>你好</code>来看看</p><p><img src="http://a3.qpic.cn/psb?/V149ONjw3gE9gi/dnIpcMPYRmqiXMXQDgr318OzNoTp3KpeQRzoQWlNjnY!/b/dPIAAAAAAAAA&amp;bo=zQTsAQAAAAADAAE!&amp;rf=viewer_4" alt="img7"></p><p>这个现象是不是很奇怪？我们现在加进去的<code>你好</code>量出来的高度才92.5，而刚刚<code>hug</code>量出来的高度是97.5，而我们给<code>span</code>的<code>font-size是100px</code>。再来看看下图</p><p><img src="http://a3.qpic.cn/psb?/V149ONjw3gE9gi/T.rXYKMOOnjAporyDmFSLboGEPnSjl6vS8Lalf7ZmyQ!/b/dPIAAAAAAAAA&amp;bo=xQR7AQAAAAADAJ4!&amp;rf=viewer_4" alt="img8"></p><p>测量出来上下红线的高度是140px。不管是<code>你好</code>的高度还是<code>hug</code>的高度，都不是我们<code>font-size</code>的100px，这是为什么呢？其实内联元素的高度是没有确定性的，即使你给一个内联元素设定了一个高度的数值，但浏览器还是会默认读取这个字体的行高，并且给你添加一点建议高度 。所以<code>font-size</code>的高度指的是内联元素里字体最高点和最低点的高度。</p><blockquote><p>内联元素的高度并不是我们设置的高度来决定的，而是由元素内部字体的最高低点决定的。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;内联元素的文档流&quot;&gt;&lt;a href=&quot;#内联元素的文档流&quot; class=&quot;headerlink&quot; title=&quot;内联元素的文档流&quot;&gt;&lt;/a&gt;内联元素的文档流&lt;/h2&gt;&lt;p&gt;先写十个&lt;code&gt;span&lt;/code&gt;，并给这十个&lt;code&gt;span&lt;/code&gt;加上
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://yoursite.com/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>如何使用CSS绘制太极图</title>

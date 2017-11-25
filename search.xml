@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[内联、块级元素的高度和文档流]]></title>
+    <url>%2F2017%2F11%2F25%2F%E5%86%85%E8%81%94%E3%80%81%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E7%9A%84%E9%AB%98%E5%BA%A6%E5%92%8C%E6%96%87%E6%A1%A3%E6%B5%81%2F</url>
+    <content type="text"><![CDATA[内联元素的文档流先写十个span，并给这十个span加上样式，现在可以看到这十个span的方向是依次从左往右排开的。然后把网页拉到最外边界宽度最宽时，可以看到右边文字10已经断成两截了，并且自动换行继续从左往右散开。说明内联元素流动方向是从左往右流动的。 块级元素的文档流我们再写十个div，也给这十个div加上边框，下图可以看到，如果是块级元素，就不从左往右流动了；而是每一个块都占一行。若是再增加一个新的div进来，就会另起一行继续从上往下流动。说明块级元素的流动方向是从上往下依次流动的。 内联元素：英文和中文的流动现在把span里的内容换成一个长的英文串，再把网页拉到极限最宽。如下图，这说明了当一个内联元素里的内容为中文时，到达宽度极限的时候会自动换行；而当内联元素为英文，到达宽度极限时并不会换行，而是直接缩进了。 如果内联元素是一个很长的英文串，在默认情况下是不会分开的，若要解决这类问题，可以给这个元素加上一个属性：1word-break:break-all;/*把单词分断*/ 块级元素若要让两个块级元素不上下分行，使之并排在同一行里，或像内联元素一样依次连起来，可以用两种办法12display：inline-block; 或 float:left； 块级元素和内联元素的高度 块级元素块级元素的高度比较好理解，是由它内部文档流元素的总和决定的。 那么，内联元素的高度是由什么决定的呢？我们先给span一个font-size为100px，现在看看图片左边，能看出来现在这个hug的像素是多高吗？ 现在用尺子量一下，就可以看到这个hug的高度是97.5。并不足100。 我们再加两个中文字你好来看看 这个现象是不是很奇怪？我们现在加进去的你好量出来的高度才92.5，而刚刚hug量出来的高度是97.5，而我们给span的font-size是100px。再来看看下图 测量出来上下红线的高度是140px。不管是你好的高度还是hug的高度，都不是我们font-size的100px，这是为什么呢？其实内联元素的高度是没有确定性的，即使你给一个内联元素设定了一个高度的数值，但浏览器还是会默认读取这个字体的行高，并且给你添加一点建议高度 。所以font-size的高度指的是内联元素里字体最高点和最低点的高度。 内联元素的高度并不是我们设置的高度来决定的，而是由元素内部字体的最高低点决定的。]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何使用CSS绘制太极图]]></title>
     <url>%2F2017%2F11%2F25%2F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E7%BB%98%E5%88%B6%E5%A4%AA%E6%9E%81%E5%9B%BE%2F</url>
     <content type="text"><![CDATA[首先画一下最外层的圆圈，并且左右两个半圆的背景设置成不同的颜色，分别代表阴阳。 12345678910.taiji&#123; border-style:solid; width:0; height:201px; border-radius:100%; border-right: 105px solid black; border-left:105px solid white; box-shadow: 0 0 25px 0 #333; margin: auto; &#125; 显示效果 然后画一个黑色的小空心圆，用margin对齐 123456789.taiji .black&#123; border:39px solid black; background-color: white; width: 25px; height: 25px; border-radius: 100%; margin-top: -3px; margin-left:-54px; &#125; 显示效果 最后把白色的空心圆也补上 12345678910.taiji .white&#123; display: block; background: black; border:39px solid white; width:25px; height:26px; border-radius:100%; margin-top:0px; margin-left:-56px;&#125; 完工！ 类似这种用CSS做出来的小玩意在这个网站上还有很多，非常有趣，打开看看吧 Tricks]]></content>
