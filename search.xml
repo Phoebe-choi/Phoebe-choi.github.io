@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何使用CSS绘制太极图]]></title>
+    <url>%2F2017%2F11%2F25%2F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E7%BB%98%E5%88%B6%E5%A4%AA%E6%9E%81%E5%9B%BE%2F</url>
+    <content type="text"><![CDATA[首先画一下最外层的圆圈，并且左右两个半圆的背景设置成不同的颜色，分别代表阴阳。 12345678910.taiji&#123; border-style:solid; width:0; height:201px; border-radius:100%; border-right: 105px solid black; border-left:105px solid white; box-shadow: 0 0 25px 0 #333; margin: auto; &#125; 显示效果 然后画一个黑色的小空心圆，用margin对齐 123456789.taiji .black&#123; border:39px solid black; background-color: white; width: 25px; height: 25px; border-radius: 100%; margin-top: -3px; margin-left:-54px; &#125; 显示效果 最后把白色的空心圆也补上 12345678910.taiji .white&#123; display: block; background: black; border:39px solid white; width:25px; height:26px; border-radius:100%; margin-top:0px; margin-left:-56px;&#125; 完工！ 类似这种用CSS做出来的小玩意在这个网站上还有很多，非常有趣，打开看看吧 Tricks]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[备份博客源文件]]></title>
     <url>%2F2017%2F11%2F21%2F%E5%A4%87%E4%BB%BD%E5%8D%9A%E5%AE%A2%E6%BA%90%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[前言使用hexo+github搭建的博客,博客作为一个单独的github仓库存在,可是仓库中不包含你每篇博客的源文件。如果你换了一台机器想要更新博客或者不小心博客源文件丢失,那就真的是一件非常糟心的事，现在给出这个问题的一种解决办法吧。 实现方法 首先在Github下创建一个新的repo，取名为blog-generator。(空仓库名随意，与本地的Hexo源码文件夹同名即可) 打开Git界面，cd进入本地的Hexo文件夹，执行以下命令创建仓库: git init 继续执行下面命令设置远程仓库地址，并更新: git remote add origin git@github.com:xxxxxx/blog-generator.git (这里的xxxxxxx是你的用户名，记得用SSH地址)git pull origin master 执行命令以下命令，完成Hexo源码在本地的提交 git add .git commit -m “添加hexo源码文件作为备份” 执行以下命令，将本地的仓库文件推送到Github。 git push origin master git clone git@github.com:xxxxxx/blog-generator.git这个是你GitHub的SSH地址，千万别用错成HTTP的地址！ 博客更新后同步到远程仓库 在本地编写完博客时，顺次执行以下命令，即可完成Hexo博客源文件的更新同步，保持Github上的hexo源码为最新版本。 git add .git commit -m “更新hexo源文件”git push origin master 远程仓库更新后同步到本地仓库 当远程仓库有更新时，执行以下命令，即可同步hexo源文件到本地。 git pull origin master 至此，Hexo源代码文件就同步和更新完了。]]></content>
       <categories>
-        <category>博客搭建</category>
+        <category>Hexo</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
@@ -27,7 +38,7 @@
     <url>%2F2017%2F11%2F15%2F%E3%80%90Hexo%E6%90%AD%E5%BB%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B%E3%80%91%2F</url>
     <content type="text"><![CDATA[准备工作 在开始一切之前，你必须已经： 有一个github账号，没有的话去注册一个； 安装了node.js（官网下载安装），默认会安装npm。 安装git（官网下载安装） 安装hexo了，方法：打开git，输入cd运行npm install -g hexo（要翻墙） 开始搭建 打开git，然后cd~/Desktop 登录GitHub，在 GitHub 上新建一个空 repo，repo 名称是「你的用户名.github.io」。（请将你的用户名替换成真正的用户名 建立好空repo后，回到git命令行界面 运行npm install -g hexo-cli，安装Hexo 继续运行hexo init myBlog 继续运行cd myBlog 继续运行npm i 运行hexo new开博大吉，你会看到一个md文件的路径 运行start xxxxxxxxxxxxxxxxxxx.md，编辑这个md文件，内容自己想（Ubuntu系统用xdg-open xxxxxxxxxxxxxxxxxxx.md命令） 继续运行start _config.yml，编辑网站配置 把第 6 行的 title 改成你想要的名字 把第 9 行的 author 改成你的大名 把最后一行的 type 改成 type: git 在最后一行，在 type 下面，加上一行 repo: 仓库地址 ， 仓库地址改为「你的用 户名.github.io」，仓库地址以 git@github.com: 开头格式如下 &gt; repo: git@github.com:你的用户名.github.io 第 4 步的 repo: 后面有个空格，不要眼瞎 继续运行npm install hexo-deployer-git –save，安装git部署插件 继续运行hexo deploy 到这里博客已经搭建好了，打开Github，进入「你的用户名.github.io」对应的repo。 你现在应该看到了你的博客了。 更换主题 主题上面有主题合集 随便找一个主题，进入主题的GitHub首页，比如我找的是 链接 复制它的SSH地址或HTTPS地址，假设地址为 git@github.com:iissnan/hexo-theme-next.git 打开git命令行界面 运行cd themes 运行git clone git@github.com:iissnan/hexo-theme-next.git 运行cd .. (这里意思是返回上一层) 将_config.yml的第75行改为theme: hexo-theme-next，保存 运行hexo generate 运行hexo deploy 等一分钟，然后刷新你的博客页面，你会看到一个新的外观。如果不喜欢这个主题，就回到第1步，重选一个主题。 至此，博客已经搭建完成了！]]></content>
       <categories>
-        <category>博客搭建</category>
+        <category>Hexo</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
