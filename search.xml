@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何购买域名]]></title>
+    <url>%2F2017%2F11%2F28%2F%E5%A6%82%E4%BD%95%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D%2F</url>
+    <content type="text"><![CDATA[前言购买域名有两个选择 向国内服务商购买，不过你需要备案（备案就是把你的照片、姓名、住址 和手机号告诉管理机构） 向国外服务商购买，不需要备案，不过需要你懂一点英文 我们当然毫不犹豫地选择后者。 开始购买 进入域名购买搜索一个你喜欢的域名，比如我搜索的是phoebe-choi，然后你就会知道哪些域名是可以买的 其中最低的价格是.xyz域名，价格只要 1.89 美元，折合人民币 12 块五毛（每年），是不是很便宜。不要急，还有更便宜的，后面会教你搜索优惠码。现在我们先确定域名，如果你对.xyz不满意，可以选phoebe-choi.info，.info 域名比.xyz 稍微好看一点，当然你也可以选择phoene-choi.me、phoebe-choi.pro等。 选中你想要的域名，点击 REGISTER CHECKED DOMAINS 绿色按钮。 然后按照图中箭头设置隐私和期限 别急着结账，有一个地方可以输入优惠码（如图）去谷歌或者百度搜索「namesilo 优惠码」，填到里面，就可以优惠一美元！我搜到的优惠码是 onesaving。但是你要注意，一个用户只能使用一次优惠码，下次你再购买域名就没有优惠啦。 新用户注册完后，用支付宝结账（一定要先输入邮箱，再选中支付宝，最后点击 go） 购买成功！支付成功后域名就是你的了! 最后点击Manage my domains查看已经购买的域名。]]></content>
+      <categories>
+        <category>域名</category>
+      </categories>
+      <tags>
+        <tag>域名</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何预览Github上的页面]]></title>
     <url>%2F2017%2F11%2F26%2F%E5%A6%82%E4%BD%95%E9%A2%84%E8%A7%88Github%E4%B8%8A%E7%9A%84%E9%A1%B5%E9%9D%A2%2F</url>
     <content type="text"><![CDATA[前言很多新手把自己的网页上传到github仓库中却发现点进去相应的html文件显示出来的是下面代码，而不是自己想在网上看到自己仓库中的demo(也就是网页的效果) 那么我们有没有办法预览项目中的html网页呢？好在github已经推出了 GitHub Pages 功能，让大家方便的预览自己的 HTML。下面就给大家做一个简易教程。 步骤1. 登入 GitHub，新建一个 repo，设置如下： 2. 进入「settings」页面： 3. 往下滚，按照图片中1-2-3的顺序，开启 GitHub Pages 功能，得到一个「预览地址」，我的「预览地址」是 https://phoebe-choi.github.io/demo/. 4. 以后你就用这个「预览地址」来预览你的 html，比如你的 html 路径是 test/index.html，那么预览链接就是 https://phoebe-choi.github.io/demo/test/index.html 步骤如下: 新建 test/index.html 编辑好后点击下方的create new file即可创建文件，根据刚才创建的文件名称的相对路径就可以用「预览地址」来预览html文件了 在浏览器输入: https://phoebe-choi.github.io/demo/test/index.html进行预览 这样，你就能自己随时预览 GitHub 里的页面了！ 以后，你只需要用 git 上传代码到这个仓库，就可以拿到作业的预览链接了！]]></content>
