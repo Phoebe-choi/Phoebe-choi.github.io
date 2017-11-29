@@ -12,7 +12,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[如何预览Github上的页面]]></title>
+    <title><![CDATA[预览Github上的页面]]></title>
     <url>%2F2017%2F11%2F26%2F%E5%A6%82%E4%BD%95%E9%A2%84%E8%A7%88Github%E4%B8%8A%E7%9A%84%E9%A1%B5%E9%9D%A2%2F</url>
     <content type="text"><![CDATA[前言很多新手把自己的网页上传到github仓库中却发现点进去相应的html文件显示出来的是下面代码，而不是自己想在网上看到自己仓库中的demo(也就是网页的效果) 那么我们有没有办法预览项目中的html网页呢？好在github已经推出了 GitHub Pages 功能，让大家方便的预览自己的 HTML。下面就给大家做一个简易教程。 步骤1. 登入 GitHub，新建一个 repo，设置如下： 2. 进入「settings」页面： 3. 往下滚，按照图片中1-2-3的顺序，开启 GitHub Pages 功能，得到一个「预览地址」，我的「预览地址」是 https://phoebe-choi.github.io/demo/. 4. 以后你就用这个「预览地址」来预览你的 html，比如你的 html 路径是 test/index.html，那么预览链接就是 https://phoebe-choi.github.io/demo/test/index.html 步骤如下: 新建 test/index.html 编辑好后点击下方的create new file即可创建文件，根据刚才创建的文件名称的相对路径就可以用「预览地址」来预览html文件了 在浏览器输入: https://phoebe-choi.github.io/demo/test/index.html进行预览 这样，你就能自己随时预览 GitHub 里的页面了！ 以后，你只需要用 git 上传代码到这个仓库，就可以拿到作业的预览链接了！]]></content>
       <categories>

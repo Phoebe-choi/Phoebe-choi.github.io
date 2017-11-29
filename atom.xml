@@ -44,11 +44,11 @@
   </entry>
   
   <entry>
-    <title>如何预览Github上的页面</title>
+    <title>预览Github上的页面</title>
     <link href="http://yoursite.com/2017/11/26/%E5%A6%82%E4%BD%95%E9%A2%84%E8%A7%88Github%E4%B8%8A%E7%9A%84%E9%A1%B5%E9%9D%A2/"/>
     <id>http://yoursite.com/2017/11/26/如何预览Github上的页面/</id>
     <published>2017-11-26T03:18:32.000Z</published>
-    <updated>2017-11-28T11:47:33.267Z</updated>
+    <updated>2017-11-29T07:35:12.443Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>很多新手把自己的网页上传到github仓库中却发现点进去相应的html文件显示出来的是下面代码，而不是自己想在网上看到自己仓库中的demo(也就是网页的效果) </p><p><img src="http://a1.qpic.cn/psb?/V149ONjw3gE9gi/mzPvN6ToHGEKEzW7Lo1cJc94BtleaiIilue4rA45B6Q!/b/dD4BAAAAAAAA&amp;bo=CQQuAgAAAAADBwM!&amp;rf=viewer_4" alt="img"></p><p>那么我们有没有办法预览项目中的html网页呢？好在github已经推出了 GitHub Pages 功能，让大家方便的预览自己的 HTML。下面就给大家做一个简易教程。</p><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p><strong>1. 登入 GitHub，新建一个 repo，设置如下：</strong></p><p><img src="http://a1.qpic.cn/psb?/V149ONjw3gE9gi/SbT1RAeZGsPCG1YHVWxHaqbJZb6iSyXu1aF0abmVxrE!/b/dPMAAAAAAAAA&amp;bo=rgLXAQAAAAADAF8!&amp;rf=viewer_4" alt="img1"></p><p><img src="http://a3.qpic.cn/psb?/V149ONjw3gE9gi/iE72VmBjtSCkLPbsuxfFGBns4zEVnpbULxnVOjgnTZQ!/b/dPIAAAAAAAAA&amp;bo=EgNsAgAAAAADAFo!&amp;rf=viewer_4" alt="img2"></p><p><strong>2. 进入「settings」页面：</strong></p><p><img src="http://a3.qpic.cn/psb?/V149ONjw3gE9gi/.YA.m6LqpFDfNqxbYG6I8SKkaGIq8FXvDYpL45*5t6E!/b/dGoBAAAAAAAA&amp;bo=uQNpAAAAAAADAPY!&amp;rf=viewer_4" alt="img3"></p><p><strong>3. 往下滚，按照图片中1-2-3的顺序，开启 GitHub Pages 功能，得到一个「预览地址」，我的「预览地址」是 <code>https://phoebe-choi.github.io/demo/.</code></strong></p><p><img src="http://a1.qpic.cn/psb?/V149ONjw3gE9gi/iVQXXnVQEnODR1AIQD8JHM4QSh8kGRrTkjtWo0*1oxk!/b/dPMAAAAAAAAA&amp;bo=0AJpAQAAAAADAJ8!&amp;rf=viewer_4" alt="img5"></p><p><strong>4. 以后你就用这个「预览地址」来预览你的 html，比如你的 html 路径是 test/index.html，那么预览链接就是 <code>https://phoebe-choi.github.io/demo/test/index.html</code> 步骤如下:</strong></p><p><img src="http://a3.qpic.cn/psb?/V149ONjw3gE9gi/rRqj8jMKvhhsbjssi9zh9UiudPmTCDGv3qXodn4ei20!/b/dFsBAAAAAAAA&amp;bo=0AOmAQAAAAADAFE!&amp;rf=viewer_4" alt="img6"></p><ul><li>新建 test/index.html</li></ul><p><img src="http://a1.qpic.cn/psb?/V149ONjw3gE9gi/KxFqGmwEyONrHng5kS986J8QtrjFiHVpyxBRibZgcNc!/b/dPMAAAAAAAAA&amp;bo=HQILAgAAAAADADM!&amp;rf=viewer_4" alt="img7"></p><ul><li><p>编辑好后点击下方的create new file即可创建文件，根据刚才创建的文件名称的相对路径就可以用「预览地址」来预览html文件了</p></li><li><p>在浏览器输入: <code>https://phoebe-choi.github.io/demo/test/index.html</code>进行预览</p></li></ul><p>这样，你就能自己随时预览 GitHub 里的页面了！</p><p>以后，<strong>你只需要用 git 上传代码到这个仓库</strong>，就可以拿到作业的预览链接了！</p>]]></content>
     
