@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://a3.qpic.cn/psb?/V149ONjw3gE9gi/Ebt*P*cdSj4*8khV1GDf1oQR8dNiLmWTiaLltSvnOww!/b/dPIAAAAAAAAA&bo=LANGAiwDRgIRADc!&rf=viewer_4">
 <meta property="og:image" content="http://a1.qpic.cn/psb?/V149ONjw3gE9gi/QnZBXJpzU0RXt0iUFKk1x*td560VsSucbAYcXVUJ1Bk!/b/dPMAAAAAAAAA&bo=iwNCAosDQgIRADc!&rf=viewer_4">
 <meta property="og:image" content="http://a1.qpic.cn/psb?/V149ONjw3gE9gi/wfmWIp8H0*T5lMuoSe6noM2vvQM3hBAHOTMFfuSIsKs!/b/dPMAAAAAAAAA&bo=wwELAQAAAAARAP8!&rf=viewer_4">
-<meta property="og:updated_time" content="2017-12-08T13:58:09.446Z">
+<meta property="og:updated_time" content="2017-12-08T14:00:04.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git操作手册">
 <meta name="twitter:description" content="配置 GitHub 进入 Github的SSH keys 如果页面里已经有一些 key，就点「delete」按钮把这些 key 全删掉。如果没有，就往下看 点击 New SSH key，你需要输入 Title 和 Key，但是你现在没有 key，往下看 打开 Git Bash 复制并运行 rm -rf ~/.ssh/* 把现有的 ssh key 都删掉，这句命令行如果你多打一个空格，可能就要重装系">
@@ -434,9 +434,12 @@
 </ul>
 <ol>
 <li>再次运行 <code>git status -sb</code>，可以看到 <code>??</code> 变成了 <code>A</code><blockquote>
-<p>##Initial commit on master<br>A  css/style.css<br>A  index.html<br>A 的意思就是添加，也就是说你告诉 git，这些文件我要加到仓库里</p>
+<p>##Initial commit on master<br>A  css/style.css<br>A  index.html</p>
 </blockquote>
 </li>
+</ol>
+<p>A 的意思就是添加，也就是说你告诉 git，这些文件我要加到仓库里</p>
+<ol>
 <li>使用 <code>git commit -m &quot;信息&quot;</code> 将你 add 过的内容「正式提交」到本地仓库（.git就是本地仓库），并添加一些注释信息，方便日后查阅</li>
 </ol>
 <ul>
@@ -451,7 +454,7 @@
 </ul>
 <ol>
 <li>再再次运行 <code>git status -sb</code>，发现没有文件变动了，这是因为文件的变动已经记录在仓库里了。<br>这时你使用 <code>git log</code> 就可以看到历史上的变动：<blockquote>
-<p>commit f0d95058cd32a332b98967f6c0a701c64a00810a<br>Author: phoebechoi <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x70;&#x68;&#x6f;&#x65;&#x62;&#101;&#99;&#x68;&#111;&#x69;&#x2e;&#x69;&#x73;&#109;&#101;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#x70;&#x68;&#x6f;&#x65;&#x62;&#101;&#99;&#x68;&#111;&#x69;&#x2e;&#x69;&#x73;&#109;&#101;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a><br>Date:   Thu Sep 28 22:30:43 2017 +0800</p>
+<p>commit f0d95058cd32a332b98967f6c0a701c64a00810a<br>Author: phoebechoi <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#112;&#104;&#x6f;&#x65;&#x62;&#101;&#x63;&#104;&#111;&#x69;&#46;&#x69;&#x73;&#109;&#x65;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;">&#112;&#104;&#x6f;&#x65;&#x62;&#101;&#x63;&#104;&#111;&#x69;&#46;&#x69;&#x73;&#109;&#x65;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;</a><br>Date:   Thu Sep 28 22:30:43 2017 +0800</p>
 <p>添加几个文件</p>
 </blockquote>
 </li>
@@ -497,9 +500,10 @@
 <blockquote>
 <ul>
 <li>在本地创建仓库</li>
-<li>将本地仓库上传到 GitHub<br>这里将第三种用法，那就是直接在 GitHub 创建一个仓库，然后下载到本地。</li>
+<li>将本地仓库上传到 GitHub</li>
 </ul>
 </blockquote>
+<p>这里有第三种用法，那就是直接在 GitHub 创建一个仓库，然后下载到本地。</p>
 <ol>
 <li>在GitHub 上新建一个仓库 git-demo-3，这次就不创建空仓库了，而是自带 README 和 Lisence 的仓库，创建截图如下：<br><img src="http://a3.qpic.cn/psb?/V149ONjw3gE9gi/Ebt*P*cdSj4*8khV1GDf1oQR8dNiLmWTiaLltSvnOww!/b/dPIAAAAAAAAA&amp;bo=LANGAiwDRgIRADc!&amp;rf=viewer_4" alt="img"><br>请按图中所示，填写一模一样的内容，然后点击创建按钮。</li>
 <li>这样一来，这个仓库就会自动拥有两个文件（有些人可能会有三个文件，还有一个文件是<code>.gitignore</code>）：<br><img src="http://a1.qpic.cn/psb?/V149ONjw3gE9gi/QnZBXJpzU0RXt0iUFKk1x*td560VsSucbAYcXVUJ1Bk!/b/dPMAAAAAAAAA&amp;bo=iwNCAosDQgIRADc!&amp;rf=viewer_4" alt="img"></li>
