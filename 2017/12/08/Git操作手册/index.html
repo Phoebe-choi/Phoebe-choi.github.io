@@ -90,7 +90,7 @@
 <meta property="og:description" content="配置 GitHub 进入 Github的SSH keys 如果页面里已经有一些 key，就点「delete」按钮把这些 key 全删掉。如果没有，就往下看 点击 New SSH key，你需要输入 Title 和 Key，但是你现在没有 key，往下看 打开 Git Bash 复制并运行 rm -rf ~/.ssh/* 把现有的 ssh key 都删掉，这句命令行如果你多打一个空格，可能就要重装系">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://m.qpic.cn/psb?/V149ONjw3gE9gi/3LZVyvPnF6SLNoH7v*ZX7jfyUVVOdlfjTf594lXOJv0!/b/dPIAAAAAAAAA&bo=ZAN4AAAAAAARBy8!&rf=viewer_4">
-<meta property="og:updated_time" content="2017-12-08T12:25:24.572Z">
+<meta property="og:updated_time" content="2017-12-08T12:41:56.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git操作手册">
 <meta name="twitter:description" content="配置 GitHub 进入 Github的SSH keys 如果页面里已经有一些 key，就点「delete」按钮把这些 key 全删掉。如果没有，就往下看 点击 New SSH key，你需要输入 Title 和 Key，但是你现在没有 key，往下看 打开 Git Bash 复制并运行 rm -rf ~/.ssh/* 把现有的 ssh key 都删掉，这句命令行如果你多打一个空格，可能就要重装系">
@@ -375,17 +375,17 @@
 <li>进入 <a href="https://github.com/settings/keys" target="_blank" rel="external">Github的SSH keys</a></li>
 <li>如果页面里已经有一些 key，就点「delete」按钮把这些 key 全删掉。如果没有，就往下看</li>
 <li>点击 <code>New SSH key</code>，你需要输入 <code>Title</code> 和 <code>Key</code>，但是你现在没有 key，往下看</li>
-<li>打开 <code>Git Bash</code></li>
+<li>打开 Git Bash</li>
 <li>复制并运行 <code>rm -rf ~/.ssh/*</code> 把现有的 ssh key 都删掉，这句命令行如果你多打一个空格，可能就要重装系统了，建议复制运行。</li>
 <li>运行 <code>ssh-keygen -t rsa -b 4096 -C &quot;你的邮箱&quot;</code>，注意填写你的邮箱！</li>
 <li>按回车三次</li>
 <li>运行 <code>cat ~/.ssh/id_rsa.pub</code>，得到一串东西，完整的复制这串东西</li>
 <li>回到上面第 3 步的页面，在 Title 输入「我的第一个 key」</li>
 <li>在 Key 里粘贴刚刚你你复制的那串东西</li>
-<li>点击 <code>Add SSH key</code></li>
-<li>回到 <code>Git Bash</code></li>
+<li>点击 Add SSH key</li>
+<li>回到 Git Bash</li>
 <li>运行 <code>ssh -T git@github.com</code>，你可能会看到这样的提示：<br><img src="http://m.qpic.cn/psb?/V149ONjw3gE9gi/3LZVyvPnF6SLNoH7v*ZX7jfyUVVOdlfjTf594lXOJv0!/b/dPIAAAAAAAAA&amp;bo=ZAN4AAAAAAARBy8!&amp;rf=viewer_4" alt="img"><br>输入 <code>yes</code> 回车……问你话你就答，别傻在那</li>
-<li>然后如果你看到 <code>Permission denied (publickey)</code>. 就说明你失败了，请回到第 1 步重来，是的，回到第 1 步重来；如果你看到 <code>Hi FrankFang! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code> 就说明你成功了！<br>好了，终于 TMD 添加了一个无聊的 <code>SSH key</code>，不要问我这个有什么用，因为一会儿你就会用到它，你想了解原理就看这篇<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">文章</a></li>
+<li>然后如果你看到 <code>Permission denied (publickey)</code>. 就说明你失败了，请回到第 1 步重来，是的，回到第 1 步重来；如果你看到 <code>Hi FrankFang! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code> 就说明你成功了！<br>好了，终于 TMD 添加了一个无聊的 SSH key，不要问我这个有什么用，因为一会儿你就会用到它，你想了解原理就看这篇<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">文章</a></li>
 </ol>
 <p>如果要讲清楚，太浪费时间了，我们只是想用用 GitHub 而已。</p>
 <ul>
@@ -405,14 +405,14 @@
 <h2 id="1-只在本地使用"><a href="#1-只在本地使用" class="headerlink" title="1.只在本地使用"></a>1.只在本地使用</h2><h3 id="1-1-初始化"><a href="#1-1-初始化" class="headerlink" title="1.1 初始化"></a>1.1 初始化</h3><ol>
 <li>创建目录作为我们的项目目录：<code>mkdir git-demo-1</code></li>
 <li>进入目录 <code>cd git-demo-1</code></li>
-<li><code>git init</code>，这句命令会在 <code>git-demo-1</code> 里创建一个 <code>.git</code> 目录</li>
-<li><code>ls -la</code> 你就会看到 <code>.git</code> 目录，它就是一个「仓库」，<strong>不要进去看，这仓库里面有毒，别进去！</strong></li>
-<li>在 <code>git-demo-1</code> 目录里面添加任意文件，假设我们添加了两个文件，分别是 <code>index.html</code> 和 <code>css/style.css</code><blockquote>
+<li><code>git init</code>，这句命令会在 git-demo-1 里创建一个 <code>.git</code> 目录</li>
+<li><code>ls -la</code> 你就会看到 .git 目录，它就是一个「仓库」，<strong>不要进去看，这仓库里面有毒，别进去！</strong></li>
+<li>在 git-demo-1 目录里面添加任意文件，假设我们添加了两个文件，分别是 index.html 和 css/style.css<blockquote>
 <p><code>touch index.html</code><br><code>mkdir css</code><br><code>touch css/style.css</code></p>
 </blockquote>
 </li>
-<li>运行 <code>git status -sb</code> 可以看到文件前面有 <code>?? 号</code><blockquote>
-<p>##Initial commit on master<br>?? css/<br>?? index.html<br>这个 <code>??</code> 表示 git 一脸懵逼，不知道你要怎么对待这些变动。</p>
+<li>运行 <code>git status -sb</code> 可以看到文件前面有 ?? 号<blockquote>
+<p>##Initial commit on master<br>?? css/<br>?? index.html<br>这个 ?? 表示 git 一脸懵逼，不知道你要怎么对待这些变动。</p>
 </blockquote>
 </li>
 <li>使用 <code>git add</code> 将文件添加到「暂存区」</li>
@@ -423,7 +423,7 @@
 </blockquote>
 </li>
 <li>你也可以一次性 add<blockquote>
-<p><code>git add</code> . 意思是把当前目录（.表示当前目录）里面的变动都加到「暂存区」</p>
+<p><code>git add .</code> 意思是把当前目录（.表示当前目录）里面的变动都加到「暂存区」</p>
 </blockquote>
 </li>
 </ul>
@@ -435,34 +435,23 @@
 <li>使用 <code>git commit -m &quot;信息&quot;</code> 将你 add 过的内容「正式提交」到本地仓库（.git就是本地仓库），并添加一些注释信息，方便日后查阅</li>
 </ol>
 <ul>
-<li>你可以一个一个地 <code>commit</code><blockquote>
-<p>git commit index.html -m ‘添加index.html’<br>git commit css/style.css -m “添加 css/style.css”</p>
-</blockquote>
-</li>
-<li>你也可以一次性<code>commit</code><blockquote>
-<p>git commit . -m “添加了几个文件”</p>
-</blockquote>
-</li>
+<li>你可以一个一个地 <code>commit</code><br>  git commit index.html -m ‘添加index.html’<br>  git commit css/style.css -m “添加 css/style.css”</li>
+<li>你也可以一次性<code>commit</code><br>  git commit . -m “添加了几个文件”</li>
 </ul>
 <ol>
-<li>再再次运行 <code>git status -sb</code>，发现没有文件变动了，这是因为文件的变动已经记录在仓库里了。<br>这时你使用 <code>git log</code> 就可以看到历史上的变动：<blockquote>
-<p>commit f0d95058cd32a332b98967f6c0a701c64a00810a<br>Author: frankfang <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#x66;&#x72;&#x61;&#110;&#107;&#102;&#x61;&#110;&#x67;&#x31;&#x39;&#57;&#48;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#x66;&#x72;&#x61;&#110;&#107;&#102;&#x61;&#110;&#x67;&#x31;&#x39;&#57;&#48;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;</a><br>Date:   Thu Sep 28 22:30:43 2017 +0800</p>
-<pre><code>添加几个文件
-</code></pre></blockquote>
+<li><p>再再次运行 <code>git status -sb</code>，发现没有文件变动了，这是因为文件的变动已经记录在仓库里了。<br>这时你使用 <code>git log</code> 就可以看到历史上的变动：<br>commit f0d95058cd32a332b98967f6c0a701c64a00810a<br>Author: frankfang <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x66;&#114;&#x61;&#110;&#x6b;&#x66;&#97;&#110;&#x67;&#x31;&#57;&#57;&#48;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#114;&#x61;&#110;&#x6b;&#x66;&#97;&#110;&#x67;&#x31;&#57;&#57;&#48;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a><br>Date:   Thu Sep 28 22:30:43 2017 +0800</p>
+<p>添加几个文件</p>
 </li>
-<li>以上就是 <code>git add / git commit</code> 的一次完整过程，可以看到，挺复杂的。原则上，你错了任何一步，就给我从头来一遍，做到你不会再手抖为止。</li>
+<li>以上就是 <code>git add / git commit</code> 的一次完整过程，可以看到，挺复杂的。原则上，错了任何一步，都从头来一遍，做到你不会再手抖为止。</li>
 </ol>
 <h3 id="1-2-文件变动"><a href="#1-2-文件变动" class="headerlink" title="1.2 文件变动"></a>1.2 文件变动</h3><p>如果我想继续改文件，应该怎么做呢？</p>
 <ol>
 <li><code>start css/style.css</code> 会使用默认的编辑器打开 css/style.css（macOS 上对应的命令是 <code>open css/style.css</code>）</li>
 <li>然后我们在 <code>css/style.css</code> 里写入 <code>body {background: red}</code>，保存退出</li>
-<li>运行 <code>git status -sb</code> 发现提示中有一个 <code>M</code><blockquote>
-<h2 id="master"><a href="#master" class="headerlink" title="master"></a>master</h2><p>M css/style.css<br>这个 M 的意思就是 Modified，表示这个文件被修改了</p>
-</blockquote>
-</li>
+<li>运行 <code>git status -sb</code> 发现提示中有一个 <code>M</code><br> ##master<br> M css/style.css<br>这个 M 的意思就是 Modified，表示这个文件被修改了</li>
 <li>此时你如果想让改动保存到仓库里，你需要先 <code>git add css/style.css</code> 或者也可以<code>git add .</code><br>注意，由于这个 css/style.css 以前被我们 add 过，你往文章上面看，我们是 add 过 css/style.css 的，所以此处的 git add 操作可以省略，但我建议你使用 git 的前一个月，不要省略 <code>git add</code>。<br>换句话说，每一次改动，都要经过 <code>git add</code> 和 <code>git commit</code> 两个命令，才能被添加到 .git 本地仓库里。</li>
 <li>再次运行 <code>git status -sb</code> 发现 M 由红色变成了绿色，红色和绿色有啥区别呢？别管它们的区别，记住我说的，先 <code>add</code>，再 <code>commit</code>，等你熟练之后再去理解区别。<br>先形成肌肉记忆，在去形成大脑记忆！</li>
-<li><code>运行</code>git commit -m “更新 css/style.css”<code>，这个改动就被提交到</code>.git` 本地仓库了。再说一次，不要去 .git 目录里面，那里的东西你一无所知。</li>
+<li>运行 <code>git commit -m &quot;更新 css/style.css&quot;</code>，这个改动就被提交到 <code>.git</code> 本地仓库了。再说一次，不要去 .git 目录里面，那里的东西你一无所知。</li>
 <li>再再次运行 <code>git status -sb</code>，会发现没有变更了，这说明所有变动都被本地仓库记录在案了。<br>这里来透露一下 <code>git status -sb</code> 是什么意思：<code>git status</code> 是用来显示当前的文件状态的，哪个文件变动了，方便你进行 git add 操作。-sb 选项的意思就是，SB都能看懂，哈，这是开玩笑，-s 的意思是显示总结（summary），-b 的意思是显示分支（branch），所以 -sb 的意思是显示总结和分支。</li>
 </ol>
 <h3 id="1-3-总结"><a href="#1-3-总结" class="headerlink" title="1.3 总结"></a>1.3 总结</h3><p>至此，我们来总结一下用到的命令</p>
@@ -677,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-GitHub"><span class="nav-number">1.</span> <span class="nav-text">配置 GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-git"><span class="nav-number">2.</span> <span class="nav-text">配置 git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-git"><span class="nav-number">3.</span> <span class="nav-text">使用 git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-只在本地使用"><span class="nav-number">4.</span> <span class="nav-text">1.只在本地使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-初始化"><span class="nav-number">4.1.</span> <span class="nav-text">1.1 初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-文件变动"><span class="nav-number">4.2.</span> <span class="nav-text">1.2 文件变动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#master"><span class="nav-number">5.</span> <span class="nav-text">master</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-总结"><span class="nav-number">5.1.</span> <span class="nav-text">1.3 总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-将本地仓库上传到-GitHub"><span class="nav-number">6.</span> <span class="nav-text">2 将本地仓库上传到 GitHub</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-GitHub"><span class="nav-number">1.</span> <span class="nav-text">配置 GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-git"><span class="nav-number">2.</span> <span class="nav-text">配置 git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-git"><span class="nav-number">3.</span> <span class="nav-text">使用 git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-只在本地使用"><span class="nav-number">4.</span> <span class="nav-text">1.只在本地使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-初始化"><span class="nav-number">4.1.</span> <span class="nav-text">1.1 初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-文件变动"><span class="nav-number">4.2.</span> <span class="nav-text">1.2 文件变动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-总结"><span class="nav-number">4.3.</span> <span class="nav-text">1.3 总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-将本地仓库上传到-GitHub"><span class="nav-number">5.</span> <span class="nav-text">2 将本地仓库上传到 GitHub</span></a></li></ol></div>
             
 
           </div>
