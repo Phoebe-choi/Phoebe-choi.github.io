@@ -81,13 +81,13 @@
 
 
 
-<meta name="description" content="###JS里的类型 #####类型转换  基本类型number string boolean symbol null undefined  复砸类型object  #####转字符串string  方法1：使用toString()转换字符串，如图   上图中可以看到，使用toString()方法把数据类型转换字符串，只有number boolean 可以转换成功，而null和undefined 则">
+<meta name="description" content="JS里的类型类型转换 基本类型number string boolean symbol null undefined  复砸类型object  转字符串string 方法1：使用toString()转换字符串，如图   上图中可以看到，使用toString()方法把数据类型转换字符串，只有number boolean 可以转换成功，而null和undefined 则返回了一条Cannot read">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Js里的类型转换">
 <meta property="og:url" content="http://yoursite.com/2018/01/01/Js里的类型转换/index.html">
 <meta property="og:site_name" content="Phoebe&#39;s Blog">
-<meta property="og:description" content="###JS里的类型 #####类型转换  基本类型number string boolean symbol null undefined  复砸类型object  #####转字符串string  方法1：使用toString()转换字符串，如图   上图中可以看到，使用toString()方法把数据类型转换字符串，只有number boolean 可以转换成功，而null和undefined 则">
+<meta property="og:description" content="JS里的类型类型转换 基本类型number string boolean symbol null undefined  复砸类型object  转字符串string 方法1：使用toString()转换字符串，如图   上图中可以看到，使用toString()方法把数据类型转换字符串，只有number boolean 可以转换成功，而null和undefined 则返回了一条Cannot read">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-97e6f2b76dbca503.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-d4904b2aaac8a5c5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -95,10 +95,10 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-82607f25c2ee9209.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-4263f4d9d692654d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-c944d77d8750a646.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-01-01T08:19:59.899Z">
+<meta property="og:updated_time" content="2018-01-01T08:28:05.962Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js里的类型转换">
-<meta name="twitter:description" content="###JS里的类型 #####类型转换  基本类型number string boolean symbol null undefined  复砸类型object  #####转字符串string  方法1：使用toString()转换字符串，如图   上图中可以看到，使用toString()方法把数据类型转换字符串，只有number boolean 可以转换成功，而null和undefined 则">
+<meta name="twitter:description" content="JS里的类型类型转换 基本类型number string boolean symbol null undefined  复砸类型object  转字符串string 方法1：使用toString()转换字符串，如图   上图中可以看到，使用toString()方法把数据类型转换字符串，只有number boolean 可以转换成功，而null和undefined 则返回了一条Cannot read">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/8532417-97e6f2b76dbca503.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -376,14 +376,11 @@
       
 
       
-        <p>###JS里的类型</p>
-<p>#####类型转换</p>
-<ul>
+        <h3 id="JS里的类型"><a href="#JS里的类型" class="headerlink" title="JS里的类型"></a>JS里的类型</h3><h5 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h5><ul>
 <li>基本类型<br><code>number</code> <code>string</code> <code>boolean</code> <code>symbol</code> <code>null</code> <code>undefined</code> </li>
 <li>复砸类型<br><code>object</code></li>
 </ul>
-<p>#####转字符串string</p>
-<ul>
+<h5 id="转字符串string"><a href="#转字符串string" class="headerlink" title="转字符串string"></a>转字符串string</h5><ul>
 <li>方法1：使用toString()转换字符串，如图<br><img src="http://upload-images.jianshu.io/upload_images/8532417-97e6f2b76dbca503.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/8532417-d4904b2aaac8a5c5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
@@ -391,13 +388,12 @@
 <ul>
 <li>方法2：使用 <code>+ &#39;&#39;</code>或<code>&#39;&#39; +</code> 转换字符串<strong>（推荐用此法来转换字符串）</strong>，如图<br><img src="http://upload-images.jianshu.io/upload_images/8532417-82cb876694ae939d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
 </ul>
-<p>图中可以看到，不管是哪一种类型，即使是用toString()转换失败的<code>null</code>和<code>undefined</code>，只要用<code>+ &#39;&#39;</code>或<code>&#39;&#39; +</code>，都可以把所有的类型都转换成字符串。<code>+</code>号的作用是：如果发现左右任意一边有字符串，它就会自动把另一边也变成字符串。<br>其实这种方法还有一种经常我们会碰见的奇怪现象，如图中最后几行：<br>在运行<code>1+1</code>的时候，运行结果等于2，而运行<code>1+&#39;1&#39;</code>的时候，结果为”11”，其实<code>1+&#39;1&#39;</code>等价于<code>(1).toString()+&#39;1&#39;</code>,运行出来的结果即为’’11’’。</p>
+<p>图中可以看到，不管是哪一种类型，即使是用toString()转换失败的<code>null</code>和<code>undefined</code>，只要用<code>+ &#39;&#39;</code>或<code>&#39;&#39; +</code>，都可以把所有的类型都转换成字符串。<code>+</code>号的作用是：如果发现左右任意一边有字符串，它就会自动把另一边也变成字符串。<br>其实这种方法还有一种经常我们会碰见的奇怪现象，如图中最后几行：<br>在运行<code>1+1</code>的时候，运行结果等于2，而运行<code>1+&#39;1&#39;</code>的时候，结果为”11”，其实<code>1+&#39;1&#39;</code>等价于<code>(1).toString()+&#39;1&#39;</code>,运行出来的结果即为”11”。</p>
 <ul>
 <li>方法3：使用全局方法<code>window.String()</code>，如图<br><img src="http://upload-images.jianshu.io/upload_images/8532417-82607f25c2ee9209.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
 </ul>
 <p>这三种方法都是可以使用的，但是我比较推荐用第二种，方便很多。</p>
-<p>#####转boolean（记住五个falsy值）</p>
-<ul>
+<h5 id="转boolean（记住五个falsy值）"><a href="#转boolean（记住五个falsy值）" class="headerlink" title="转boolean（记住五个falsy值）"></a>转boolean（记住五个falsy值）</h5><ul>
 <li>方法1，一般用法，直接使用boolean转换，如图<br><img src="http://upload-images.jianshu.io/upload_images/8532417-4263f4d9d692654d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
 </ul>
 <p>-方法2，推荐用法，直接用<code>!!</code>转换，如图<br><img src="http://upload-images.jianshu.io/upload_images/8532417-c944d77d8750a646.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>在js里面，其它的值转换成布尔的时候，有五个特殊的值需要记住的，分别为：</p>
@@ -408,8 +404,8 @@
 </blockquote>
 </li>
 <li>string<blockquote>
-<p>‘ ‘ =false</p>
-<p>‘ ‘  为空字符串</p>
+<p>‘’ =false</p>
+<p>‘’ 为空字符串</p>
 </blockquote>
 </li>
 <li>null <blockquote>
@@ -424,13 +420,12 @@
 </li>
 </ul>
 <p><code>0</code> <code>NaN</code> <code>&#39;&#39;</code> <code>null</code> <code>undefined</code>  这五个值均为falsy值(关于falsy可以查阅MDN文档了解)，除了这五个值以外，其余的值转成boolean都为true.<br>还有一个object类型，这个类型的boolean值全部都是true，包括array和function，都为true.</p>
-<p>#####转number</p>
-<ul>
+<h5 id="转number"><a href="#转number" class="headerlink" title="转number"></a>转number</h5><ul>
 <li>number(‘1’)===1</li>
-<li>parseInt(‘1’，10)     全局函数</li>
+<li>parseInt(‘1’,10)     全局函数</li>
 <li>parsefloat(‘1.23’)===1.23</li>
 <li>‘1’-0===1  推荐此法</li>
-<li>+’1’ === 1 或 + ‘-1’ === -1</li>
+<li>+’1’ ===1或 +’-1’=== -1</li>
 </ul>
 
       
@@ -524,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -612,6 +616,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS里的类型"><span class="nav-number">1.</span> <span class="nav-text">JS里的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#类型转换"><span class="nav-number">1.0.1.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#转字符串string"><span class="nav-number">1.0.2.</span> <span class="nav-text">转字符串string</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#转boolean（记住五个falsy值）"><span class="nav-number">1.0.3.</span> <span class="nav-text">转boolean（记住五个falsy值）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#转number"><span class="nav-number">1.0.4.</span> <span class="nav-text">转number</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
