@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="其它," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Phoebe's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="请写出一个符合 W3C 规范的 HTML 文件，要求： 页面标题为「我的页面」 页面中引入了一个外部 CSS 文件，文件路径为 /style.css 页面中引入了另一个外部 CSS 文件，路径为 /print.css，该文件仅在打印时生效 页面中引入了另一个外部 CSS 文件，路径为 /mobile.css，该文件仅在设备宽度小于 500 像素时生效 页面中引入了一个外部 JS 文件，路径为 /m">
+<meta name="keywords" content="其它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="十道题">
+<meta property="og:url" content="http://yoursite.com/2018/01/16/十道题/index.html">
+<meta property="og:site_name" content="Phoebe&#39;s Blog">
+<meta property="og:description" content="请写出一个符合 W3C 规范的 HTML 文件，要求： 页面标题为「我的页面」 页面中引入了一个外部 CSS 文件，文件路径为 /style.css 页面中引入了另一个外部 CSS 文件，路径为 /print.css，该文件仅在打印时生效 页面中引入了另一个外部 CSS 文件，路径为 /mobile.css，该文件仅在设备宽度小于 500 像素时生效 页面中引入了一个外部 JS 文件，路径为 /m">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-16T12:09:36.774Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="十道题">
+<meta name="twitter:description" content="请写出一个符合 W3C 规范的 HTML 文件，要求： 页面标题为「我的页面」 页面中引入了一个外部 CSS 文件，文件路径为 /style.css 页面中引入了另一个外部 CSS 文件，路径为 /print.css，该文件仅在打印时生效 页面中引入了另一个外部 CSS 文件，路径为 /mobile.css，该文件仅在设备宽度小于 500 像素时生效 页面中引入了一个外部 JS 文件，路径为 /m">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/16/十道题/"/>
+
+
+
+
+
+  <title>十道题 | Phoebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Phoebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">求知若饥，虚心若愚</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-works">
+          <a href="/works" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            作品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/16/十道题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Phoebe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Phoebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">十道题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T19:54:42+08:00">
+                2018-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/其它/" itemprop="url" rel="index">
+                    <span itemprop="name">其它</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="请写出一个符合-W3C-规范的-HTML-文件，要求："><a href="#请写出一个符合-W3C-规范的-HTML-文件，要求：" class="headerlink" title="请写出一个符合 W3C 规范的 HTML 文件，要求："></a>请写出一个符合 W3C 规范的 HTML 文件，要求：</h5><ul>
+<li>页面标题为「我的页面」</li>
+<li>页面中引入了一个外部 CSS 文件，文件路径为 /style.css</li>
+<li>页面中引入了另一个外部 CSS 文件，路径为 /print.css，该文件仅在打印时生效</li>
+<li>页面中引入了另一个外部 CSS 文件，路径为 /mobile.css，该文件仅在设备宽度小于 500 像素时生效</li>
+<li>页面中引入了一个外部 JS 文件，路径为 /main.js</li>
+<li>页面中引入了一个外部 JS 文件，路径为 /gbk.js，文件编码为 GBK</li>
+<li>页面中有一个 SVG 标签，SVG 里面有一个直径为 100 像素的圆圈，颜色随意<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh-Hans&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;我的页面&lt;/title&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;/style.css&quot;&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;/print.css&quot; media=&quot;print&quot;&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;/mobile.css&quot; media=&quot;max-width:500px&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;svg width=&quot;100%&quot; height=&quot;200&quot;&gt;</span><br><span class="line">    &lt;circle cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;50&quot; fill=&quot;green&quot;/&gt;</span><br><span class="line">    &lt;/svg&gt; </span><br><span class="line">    &lt;script src=&quot;/main.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;/gbk.js&quot; charset=&quot;GBK&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="移动端是怎么做适配的？"><a href="#移动端是怎么做适配的？" class="headerlink" title="移动端是怎么做适配的？"></a>移动端是怎么做适配的？</h5><p><a href="https://github.com/Bless-L/MyBlog/blob/master/post/2016%E8%85%BE%E8%AE%AF%E5%AE%9E%E4%B9%A0%E7%94%9F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86%E5%8F%8A%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89.md" title="null" target="_blank" rel="external">2016年腾讯前端面试题</a></p>
+<p>回答要点：</p>
+<ul>
+<li>meta viewport</li>
+<li>媒体查询（<a href="https://xiedaimala.com/courses/003b1951-22af-4821-ad80-d2880c0074eb/tasks/f61cdba2-cea3-4da1-90b6-3f37bd8d6d5b" title="null" target="_blank" rel="external">教程</a>）</li>
+<li>动态 rem 方案（<a href="https://xiedaimala.com/courses/003b1951-22af-4821-ad80-d2880c0074eb/tasks/37a886be-169c-4a99-8bfb-1a993be8119d" title="null" target="_blank" rel="external">教程</a>）</li>
+</ul>
+<h6 id="meta-viewport"><a href="#meta-viewport" class="headerlink" title="meta viewport"></a>meta viewport</h6><p>在HTML的<head>标签加meta进行移动端的适配<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</span><br></pre></td></tr></table></figure></head></p>
+<h6 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h6><p>使用 @media 查询，可以针对不同的媒体类型定义不同的样式。<br>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media mediatype and|not|only (media feature) &#123;</span><br><span class="line">    CSS-Code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也可以针对不同的媒体使用不同 stylesheets (媒体类型是可选的，默认值是all):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;mediatype and|not|only (media feature)&quot; href=&quot;mystylesheet.css&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>实例：实现浏览器窗口小于 500px并将背景将变为绿色：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width: 500px) &#123;</span><br><span class="line">    body &#123;</span><br><span class="line">        background-color: green;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h6><p>rem（font size of the root element）是指相对于根元素（即html元素）的字体大小的单位，即根据网页的根元素（html）来设置字体的大小。</p>
+<ul>
+<li>手机端方案的特点<br>a. 所有手机显示的界面都是一样的，只是大小不同<br>b. 1 rem == html font-size == viewport width</li>
+<li><p>使用 JS 动态调整 REM</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line">     var pageWidth = window.innerWidth</span><br><span class="line">     document.write(&apos;&lt;style&gt;html&#123;font-size:&apos;+pageWidth+&apos;px;&#125;&lt;/style&gt;&apos;)</span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>REM 可以与其他单位同时存在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">font-size: 16px;</span><br><span class="line"> border: 1px solid red;</span><br><span class="line"> width: 0.5rem;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 SCSS 里使用 PX2REM，实现 px 自动转换 rem</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@function px( $px )&#123;</span><br><span class="line">  @return $px/$designWidth*10 + rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$designWidth : 750;  //750为设计稿的宽度</span><br><span class="line"></span><br><span class="line">.child&#123;</span><br><span class="line">  width: px(375);</span><br><span class="line">  height: px(160);</span><br><span class="line">  margin: px(40) px(40);</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  float: left;</span><br><span class="line">  font-size: 1.2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="用过CSS3吗-实现圆角矩形和阴影怎么做"><a href="#用过CSS3吗-实现圆角矩形和阴影怎么做" class="headerlink" title="用过CSS3吗? 实现圆角矩形和阴影怎么做?"></a><a href="http://js.jirengu.com/koqix/2/edit?html,css,output" target="_blank" rel="external">用过CSS3吗? 实现圆角矩形和阴影怎么做?</a></h5><h5 id="请说出至少-8-个-HTTP-状态码，并描述各状态码的意义。"><a href="#请说出至少-8-个-HTTP-状态码，并描述各状态码的意义。" class="headerlink" title="请说出至少 8 个 HTTP 状态码，并描述各状态码的意义。"></a>请说出至少 8 个 HTTP 状态码，并描述各状态码的意义。</h5><ul>
+<li><p>HTTP五种类型状态码<br>1XX：信息，服务器收到请求，需要请求者继续执行操作<br>2XX：成功，操作被成功接收并处理<br>3XX：重定向，需要进一步的操作以完成请求<br>4XX：客户端错误，请求包含语法错误或无法完成请求<br>5XX：服务器错误，服务器在处理请求的过程中发生了错误</p>
+</li>
+<li><p>205 //重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域。</p>
+</li>
+<li>302 //临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI。</li>
+<li>303 //查看其它地址。与301类似。使用GET和POST请求查看。</li>
+<li>403 //服务器理解请求客户端的请求，但是拒绝执行此请求。</li>
+<li>404 //服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面</li>
+<li>406 //服务器无法根据客户端请求的内容特性完成请求。</li>
+<li>501 Not Implemented: 服务器不支持当前请求所需要的某个功能。</li>
+<li>502 //服务器不支持请求的HTTP协议的版本，无法完成处理。</li>
+</ul>
+<h5 id="请说出至少三种排序的思路，这三种排序的时间复杂度分别为"><a href="#请说出至少三种排序的思路，这三种排序的时间复杂度分别为" class="headerlink" title="请说出至少三种排序的思路，这三种排序的时间复杂度分别为"></a>请说出至少三种排序的思路，这三种排序的时间复杂度分别为</h5><ul>
+<li>O(n*n) </li>
+<li>O(n log2 n)</li>
+<li>O(n + max) </li>
+</ul>
+<p>O(n*n) 冒泡排序：冒泡排序：比较相邻的两个数，如果前面的数比后面的数大，就交换它们的位置。第一次比较，最大的数就排在了队尾。如此重复上面的操作，直到所有数据都排好序</p>
+<p>O(n log2 n)堆排序<br>堆分为最大堆和最小堆，可以视为一棵完全的二叉树。以最大堆为例。最大堆要求父节点的元素都大于其孩子(子节点)。如果这个父节点的值要小于其左右子节点的值，那就要从其左右子节点中找出一个最大的值让它上浮顶替当前的父节点。而当前的父节点就下沉到之前子节点的位置。每一次排序都从最底层开始，自下而上的把每一个找到的最大堆值层层上浮，直到堆顶，然后取堆顶的值放到序列最后。依次类推，最终得到排序的序列。</p>
+<p>O(n + max)基数排序<br>把一串数据从低位到高位依次比较各个位。先从个位开始，根据位值(0-9)分别放到0-9号桶中，再将放置在0~9号桶中的数据按顺序放到数组中。重复前面操作，直到数据从个位到最高位排好序。</p>
+<h5 id="请写出一个-HTTP-post-请求的内容，包括四部分。"><a href="#请写出一个-HTTP-post-请求的内容，包括四部分。" class="headerlink" title="请写出一个 HTTP post 请求的内容，包括四部分。"></a>请写出一个 HTTP post 请求的内容，包括四部分。</h5><p>其中<br>第四部分的内容是 username=ff&amp;password=123<br>第二部分必须含有 Content-Type 字段<br>请求的路径为 /path<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">POST / HTTP/1.1</span><br><span class="line">Host: www.baidu.com</span><br><span class="line">User-Agent: curl/7.54.0</span><br><span class="line">Accept: */*</span><br><span class="line">Content-Length: 10</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line"></span><br><span class="line">user=ff&amp;password=123</span><br></pre></td></tr></table></figure></p>
+<h5 id="一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？"><a href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？" class="headerlink" title="一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？"></a>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</h5><p>分为以下几个过程：</p>
+<ol>
+<li>当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。</li>
+<li>浏览器与远程Web服务器通过TCP三次握手来建立一个TCP/IP连接。该握手包括一个同步报文，一个同步应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。</li>
+<li>一旦TCP/IP连接建立，浏览器会通过该连接向远程服务器发送HTTP的GET请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。</li>
+<li>此时，Web服务器提供资源服务，客户端开始下载资源。包括如下过程：</li>
+</ol>
+<ul>
+<li>浏览器开始下载html文档(响应报头，状态码200)，同时设置缓存。 </li>
+<li>之后浏览器对整个 HTML 结构进行解析，形成 DOM 树；与此同时，它还需要对相应的 CSS 文件进行解析，形成 CSS 树（CSSOM）</li>
+<li>接下来，需要结合 DOM + CSSOM，形成一个绘制树（Render Tree）</li>
+<li>得到绘制树之后，浏览器开始布局渲染树并将其绘制到屏幕上，最后组合成一个页面。</li>
+</ul>
+<h5 id="如何实现数组去重？"><a href="#如何实现数组去重？" class="headerlink" title="如何实现数组去重？"></a>如何实现数组去重？</h5><p>假设有数组 array = [1,5,2,3,4,2,3,1,3,4]<br>你要写一个函数 unique，使得<br>unique(array) 的值为 [1,5,2,3,4]<br>也就是把重复的值都去掉，只保留不重复的值。<br>要求：<br>不要做多重循环，只能遍历一次<br>请给出两种方案，一种能在 ES 5 环境中运行，一种能在 ES 6 环境中运行（提示 ES 6 环境多了一个 Set 对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ES 5:</span><br><span class="line">var array = [1,5,2,3,4,2,3,1,3,4]</span><br><span class="line">function unique(arr) &#123; </span><br><span class="line">   var newArr = []; </span><br><span class="line">   var object = &#123;&#125;;</span><br><span class="line">   for(var i=0,l=arr.length;i&lt;l;i++) &#123;</span><br><span class="line">     if(!object[arr[i]]) &#123;</span><br><span class="line">       object[arr[i]] = true;</span><br><span class="line">       newArr.push(arr[i]);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   return newArr;</span><br><span class="line"> &#125;</span><br><span class="line">console.log(unique(array)); //[1, 5, 2, 3, 4]</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ES 6:</span><br><span class="line">var array = [1,5,2,3,4,2,3,1,3,4]</span><br><span class="line">function unique (array) &#123;</span><br><span class="line">  return Array.from(new Set(array))</span><br><span class="line">&#125;</span><br><span class="line">console.log(unique(array));  // [1, 5, 2, 3, 4]</span><br></pre></td></tr></table></figure>
+<h5 id="call、apply、bind-的用法分别是什么？"><a href="#call、apply、bind-的用法分别是什么？" class="headerlink" title="call、apply、bind 的用法分别是什么？"></a>call、apply、bind 的用法分别是什么？</h5><ul>
+<li>call()和apply()<br>call()接收一串单独的参数，apply()接收一个参数数组<br>apply()和call() 的作用基本上都差不多，只是接受参数的方式不太一样。它们都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。<ul>
+<li>bind<br>bind()方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，绑定函数会以创建它时传入 bind()方法的第一个参数作为 this，传入 bind() 方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>三者的比较<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;  </span><br><span class="line">    x: 81,  </span><br><span class="line">&#125;;  </span><br><span class="line">var foo = &#123;  </span><br><span class="line">    getX: function() &#123;  </span><br><span class="line">        return this.x;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"> </span><br><span class="line">console.log(foo.getX.bind(obj)());  //81  </span><br><span class="line">console.log(foo.getX.call(obj));    //81  </span><br><span class="line">console.log(foo.getX.apply(obj));   //81</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>虽然三个输出的都是81，但是 bind() 方法的后面多了对括号。也就是说，区别是当你希望改变上下文环境之后并非立即执行，而是回调执行的时候，使用 bind() 方法。而 apply/call 则会立即执行函数。</p>
+<h5 id="什么是闭包，闭包的用途是什么？"><a href="#什么是闭包，闭包的用途是什么？" class="headerlink" title="什么是闭包，闭包的用途是什么？"></a>什么是闭包，闭包的用途是什么？</h5><p>概念：<br>当我们需要得到函数内的局部变量时，就要在函数的内部，再定义一个函数。闭包就是能够读取函数内部变量的函数。</p>
+<p>用处</p>
+<ul>
+<li>可以读取函数内部的变量</li>
+<li>让变量的值始终保持在内存中。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　　function a()&#123;</span><br><span class="line">　　　　var n=1;</span><br><span class="line">　　　　function b()&#123;  //这里的b就是一个闭包</span><br><span class="line">　　　　　　alert(n); </span><br><span class="line">　　　　&#125;</span><br><span class="line">　　　　return b;</span><br><span class="line">　　&#125;</span><br><span class="line">　　var result=a();</span><br><span class="line">　　result(); // 1</span><br></pre></td></tr></table></figure>
+<p>上面代码中函数b就是一个闭包，从运行结果来看，函数b可以读取a的局部变量n。正好诠释了上面<strong>“闭包就是能够读取函数内部变量的函数”</strong>这一句话。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/其它/" rel="tag"><i class="fa fa-tag"></i>
+
+ 其它</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/12/实现一个jQuery的API/" rel="next" title="实现一个jQuery的API">
+                <i class="fa fa-chevron-left"></i> 实现一个jQuery的API
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Phoebe" />
+            
+              <p class="site-author-name" itemprop="name">Phoebe</p>
+              <p class="site-description motion-element" itemprop="description">standing on shoulders of giants</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Phoebe-choi" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/48f6d07b9b66" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-globe"></i>简书</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#请写出一个符合-W3C-规范的-HTML-文件，要求："><span class="nav-number">1.</span> <span class="nav-text">请写出一个符合 W3C 规范的 HTML 文件，要求：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#移动端是怎么做适配的？"><span class="nav-number">2.</span> <span class="nav-text">移动端是怎么做适配的？</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#meta-viewport"><span class="nav-number">2.1.</span> <span class="nav-text">meta viewport</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#媒体查询"><span class="nav-number">2.2.</span> <span class="nav-text">媒体查询</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#rem"><span class="nav-number">2.3.</span> <span class="nav-text">rem</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用过CSS3吗-实现圆角矩形和阴影怎么做"><span class="nav-number">3.</span> <span class="nav-text">用过CSS3吗? 实现圆角矩形和阴影怎么做?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#请说出至少-8-个-HTTP-状态码，并描述各状态码的意义。"><span class="nav-number">4.</span> <span class="nav-text">请说出至少 8 个 HTTP 状态码，并描述各状态码的意义。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#请说出至少三种排序的思路，这三种排序的时间复杂度分别为"><span class="nav-number">5.</span> <span class="nav-text">请说出至少三种排序的思路，这三种排序的时间复杂度分别为</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#请写出一个-HTTP-post-请求的内容，包括四部分。"><span class="nav-number">6.</span> <span class="nav-text">请写出一个 HTTP post 请求的内容，包括四部分。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？"><span class="nav-number">7.</span> <span class="nav-text">一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何实现数组去重？"><span class="nav-number">8.</span> <span class="nav-text">如何实现数组去重？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#call、apply、bind-的用法分别是什么？"><span class="nav-number">9.</span> <span class="nav-text">call、apply、bind 的用法分别是什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是闭包，闭包的用途是什么？"><span class="nav-number">10.</span> <span class="nav-text">什么是闭包，闭包的用途是什么？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Phoebe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
