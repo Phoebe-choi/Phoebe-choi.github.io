@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -81,25 +81,20 @@
 
 
 
-<meta name="description" content="JS里的类型类型转换 基本类型number string boolean symbol null undefined  复砸类型object  转字符串string 方法1：使用toString()转换字符串，如图   上图中可以看到，使用toString()方法把数据类型转换字符串，只有number boolean 可以转换成功，而null和undefined 则返回了一条Cannot read">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="宽度与高度 如果div里面有一个内联元素，那么这个div的高度就是内联元素的这一行的行高决定的。 当我们写一个div并且不给任何样式的时候，div的高度为0.但是当我们给这个div添加一个字并且给CSS样式加一句font-size：20px;的时候，div的高度却并不是20px，而总是要多几像素，这时就变成了一个不确定的值。这是因为每个字体的设计师都给每一个字体建议了一个字体默认的行高。当然，再给">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Js里的类型转换">
-<meta property="og:url" content="http://yoursite.com/2018/01/01/Js里的类型转换/index.html">
+<meta property="og:title" content="一些CSS宽度与高度的理解">
+<meta property="og:url" content="http://yoursite.com/2018/01/17/一些CSS宽度与高度的理解/index.html">
 <meta property="og:site_name" content="Phoebe&#39;s Blog">
-<meta property="og:description" content="JS里的类型类型转换 基本类型number string boolean symbol null undefined  复砸类型object  转字符串string 方法1：使用toString()转换字符串，如图   上图中可以看到，使用toString()方法把数据类型转换字符串，只有number boolean 可以转换成功，而null和undefined 则返回了一条Cannot read">
+<meta property="og:description" content="宽度与高度 如果div里面有一个内联元素，那么这个div的高度就是内联元素的这一行的行高决定的。 当我们写一个div并且不给任何样式的时候，div的高度为0.但是当我们给这个div添加一个字并且给CSS样式加一句font-size：20px;的时候，div的高度却并不是20px，而总是要多几像素，这时就变成了一个不确定的值。这是因为每个字体的设计师都给每一个字体建议了一个字体默认的行高。当然，再给">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-97e6f2b76dbca503.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-d4904b2aaac8a5c5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-82cb876694ae939d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-82607f25c2ee9209.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-4263f4d9d692654d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-c944d77d8750a646.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-01-01T08:28:05.962Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8532417-18a065a28f4290b8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-01-17T07:08:18.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Js里的类型转换">
-<meta name="twitter:description" content="JS里的类型类型转换 基本类型number string boolean symbol null undefined  复砸类型object  转字符串string 方法1：使用toString()转换字符串，如图   上图中可以看到，使用toString()方法把数据类型转换字符串，只有number boolean 可以转换成功，而null和undefined 则返回了一条Cannot read">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/8532417-97e6f2b76dbca503.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="一些CSS宽度与高度的理解">
+<meta name="twitter:description" content="宽度与高度 如果div里面有一个内联元素，那么这个div的高度就是内联元素的这一行的行高决定的。 当我们写一个div并且不给任何样式的时候，div的高度为0.但是当我们给这个div添加一个字并且给CSS样式加一句font-size：20px;的时候，div的高度却并不是20px，而总是要多几像素，这时就变成了一个不确定的值。这是因为每个字体的设计师都给每一个字体建议了一个字体默认的行高。当然，再给">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/8532417-18a065a28f4290b8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -129,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/01/Js里的类型转换/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/17/一些CSS宽度与高度的理解/"/>
 
 
 
 
 
-  <title>Js里的类型转换 | Phoebe's Blog</title>
+  <title>一些CSS宽度与高度的理解 | Phoebe's Blog</title>
   
 
 
@@ -282,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/01/Js里的类型转换/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/17/一些CSS宽度与高度的理解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Phoebe">
@@ -299,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Js里的类型转换</h1>
+          <h1 class="post-title" itemprop="name headline">一些CSS宽度与高度的理解</h1>
         
 
         <div class="post-meta">
@@ -311,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-01T16:16:31+08:00">
-                2018-01-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-17T15:02:47+08:00">
+                2018-01-17
               </time>
             
 
@@ -334,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -376,56 +371,65 @@
       
 
       
-        <h3 id="JS里的类型"><a href="#JS里的类型" class="headerlink" title="JS里的类型"></a>JS里的类型</h3><h5 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h5><ul>
-<li>基本类型<br><code>number</code> <code>string</code> <code>boolean</code> <code>symbol</code> <code>null</code> <code>undefined</code> </li>
-<li>复砸类型<br><code>object</code></li>
+        <h3 id="宽度与高度"><a href="#宽度与高度" class="headerlink" title="宽度与高度"></a>宽度与高度</h3><ul>
+<li>如果div里面有一个内联元素，那么这个div的高度就是内联元素的这一行的行高决定的。<blockquote>
+<p>当我们写一个div并且不给任何样式的时候，div的高度为0.但是当我们给这个div添加一个字并且给CSS样式加一句<code>font-size：20px;</code>的时候，div的高度却并不是20px，而总是要多几像素，这时就变成了一个不确定的值。这是因为每个字体的设计师都给每一个字体建议了一个字体默认的行高。当然，再给div添加完样式后，行高也可以自己写死(不是绝对的)。<br>当在div里添加字体的时候，其高度是有行高加字体的建议高度确定的，而不是字体的高度确定的。</p>
+</blockquote>
+</li>
+<li><p>span 是inline元素，是不支持用width来设置宽度的，所以要给span设置宽度的时候要添加<code>display:inline-block</code>使span变成<code>display:inline-block</code>元素。</p>
+</li>
+<li><p>–webkit–  //Chrome、safiri、opera都支持，Firefox和IE不支持</p>
+</li>
 </ul>
-<h5 id="转字符串string"><a href="#转字符串string" class="headerlink" title="转字符串string"></a>转字符串string</h5><ul>
-<li>方法1：使用toString()转换字符串，如图<br><img src="http://upload-images.jianshu.io/upload_images/8532417-97e6f2b76dbca503.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/8532417-d4904b2aaac8a5c5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>上图中可以看到，使用<code>toString()</code>方法把数据类型转换字符串，只有<code>number</code> <code>boolean</code> 可以转换成功，而<code>null</code>和<code>undefined</code> 则返回了一条<strong>Cannot read property ‘toString’ of null</strong> ，说明<code>null</code>和<code>undefined</code>无法使用toString()转换字符串，那么只能使用其它方法。</p>
 <ul>
-<li>方法2：使用 <code>+ &#39;&#39;</code>或<code>&#39;&#39; +</code> 转换字符串<strong>（推荐用此法来转换字符串）</strong>，如图<br><img src="http://upload-images.jianshu.io/upload_images/8532417-82cb876694ae939d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>实现姓名和联系方式左右对齐效果<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">span::after&#123;</span><br><span class="line">    content:&apos;&apos;;</span><br><span class="line">    display:inline-block;</span><br><span class="line">    width:100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>图中可以看到，不管是哪一种类型，即使是用toString()转换失败的<code>null</code>和<code>undefined</code>，只要用<code>+ &#39;&#39;</code>或<code>&#39;&#39; +</code>，都可以把所有的类型都转换成字符串。<code>+</code>号的作用是：如果发现左右任意一边有字符串，它就会自动把另一边也变成字符串。<br>其实这种方法还有一种经常我们会碰见的奇怪现象，如图中最后几行：<br>在运行<code>1+1</code>的时候，运行结果等于2，而运行<code>1+&#39;1&#39;</code>的时候，结果为”11”，其实<code>1+&#39;1&#39;</code>等价于<code>(1).toString()+&#39;1&#39;</code>,运行出来的结果即为”11”。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/8532417-18a065a28f4290b8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实现姓名和联系方式左右对齐效果"></p>
 <ul>
-<li>方法3：使用全局方法<code>window.String()</code>，如图<br><img src="http://upload-images.jianshu.io/upload_images/8532417-82607f25c2ee9209.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li><p>只要是inline元素，不管是<code>inline-blok</code>还是<code>inline</code>，两个元素之间有任何看不见的字符，那就是空格[图片上传失败…(image-fe2684-1516172327947)]</p>
+</li>
+<li><p>若是想要把<code>&lt;li&gt;</code>之间的缝隙去掉<br>[图片上传失败…(image-e9c1ba-1516172327947)]</p>
+</li>
+<li><p>多行文字溢出</p>
+</li>
 </ul>
-<p>这三种方法都是可以使用的，但是我比较推荐用第二种，方便很多。</p>
-<h5 id="转boolean（记住五个falsy值）"><a href="#转boolean（记住五个falsy值）" class="headerlink" title="转boolean（记住五个falsy值）"></a>转boolean（记住五个falsy值）</h5><ul>
-<li>方法1，一般用法，直接使用boolean转换，如图<br><img src="http://upload-images.jianshu.io/upload_images/8532417-4263f4d9d692654d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-<p>-方法2，推荐用法，直接用<code>!!</code>转换，如图<br><img src="http://upload-images.jianshu.io/upload_images/8532417-c944d77d8750a646.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>在js里面，其它的值转换成布尔的时候，有五个特殊的值需要记住的，分别为：</p>
+<p><a href="https://css-tricks.com/line-clampin/" target="_blank" rel="external">使一段文字变成一行或多行并且多余部分用…显示</a></p>
+<p>[图片上传失败…(image-2d6a0b-1516172327947)]</p>
+<p>[站外图片上传中…(image-a47274-1516172327947)]</p>
 <ul>
-<li>number<blockquote>
-<p>0=false<br>NaN=false</p>
-<p>number除了这两个值为false外，其余均为true</p>
+<li>文字垂直居中</li>
+</ul>
+<p>在一个div里把文字垂直居中，不要同时用height设置高度又用line-height设置居中!!!不要同时用height设置高度又用line-height设置居中!!!会造成Bug!</p>
+<p>请用下面方案实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">line-height</span><br><span class="line">padding</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>margin</p>
+<blockquote>
+<p>如果一个div里面还有div，那么这个div的高度就是由它里面div高度的margin+padding+高度决定的。</p>
 </blockquote>
 </li>
-<li>string<blockquote>
-<p>‘’ =false</p>
-<p>‘’ 为空字符串</p>
+<li><p>div的高度由什么决定的？</p>
+<blockquote>
+<p>div的高度是由它内部文档流中元素的总和决定的。</p>
 </blockquote>
 </li>
-<li>null <blockquote>
-<p>null=false</p>
-<p>null本身就为false</p>
-</blockquote>
+<li><p>脱离文档流的办法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">float:left;</span><br><span class="line">position:absolute;</span><br><span class="line">position:fixed;</span><br></pre></td></tr></table></figure>
 </li>
-<li>undefined<blockquote>
-<p>undefined=false</p>
-<p>undefined本身就为false</p>
+<li><p>div里面的div如何绝对居中(绝对居中就是上下居中，左右居中)？<br>实现高度不确定，宽度不确定，全屏的居中<br>[站外图片上传中…(image-3e350d-1516172327947)]</p>
+</li>
+<li><p>总结</p>
+<blockquote>
+<p><code>margin</code>和<code>padding</code>、<code>border</code>可以影响内联元素的宽度，但不影响高度。内联元素的高度是由行高决定的，宽度是由<code>margin</code>和<code>padding</code>、<code>border</code>影响的。</p>
 </blockquote>
 </li>
 </ul>
-<p><code>0</code> <code>NaN</code> <code>&#39;&#39;</code> <code>null</code> <code>undefined</code>  这五个值均为falsy值(关于falsy可以查阅MDN文档了解)，除了这五个值以外，其余的值转成boolean都为true.<br>还有一个object类型，这个类型的boolean值全部都是true，包括array和function，都为true.</p>
-<h5 id="转number"><a href="#转number" class="headerlink" title="转number"></a>转number</h5><ul>
-<li>number(‘1’)===1</li>
-<li>parseInt(‘1’,10)     全局函数</li>
-<li>parsefloat(‘1.23’)===1.23</li>
-<li>‘1’-0===1  推荐此法</li>
-<li>+’1’ ===1或 +’-1’=== -1</li>
+<blockquote>
+<p>div的宽度是默认自适应它父元素的宽度。尽量不要去更改一个div的宽度。</p>
+<p>div的高度:如果div里面是内联元素，那么div的高度就是内联元素所有的行高加起来。如果是块级元素，就是由它内部的文档流元素高度的总和决定的。</p>
+</blockquote>
+<ul>
+<li>实现宽高1比1的自适应div<br>[站外图片上传中…(image-fd1935-1516172327947)]</li>
 </ul>
 
       
@@ -444,9 +448,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i>
+            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i>
 
- JavaScript</a>
+ CSS</a>
           
         </div>
       
@@ -459,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/11/工具以及一些学习网站/" rel="next" title="工具以及一些学习网站">
-                <i class="fa fa-chevron-left"></i> 工具以及一些学习网站
+              <a href="/2018/01/16/十道题/" rel="next" title="十道题">
+                <i class="fa fa-chevron-left"></i> 十道题
               </a>
             
           </div>
@@ -468,10 +472,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/06/Javascript操作DOM常用API总结/" rel="prev" title="Javascript操作DOM常用API总结">
-                Javascript操作DOM常用API总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -630,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS里的类型"><span class="nav-number">1.</span> <span class="nav-text">JS里的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#类型转换"><span class="nav-number">1.0.1.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#转字符串string"><span class="nav-number">1.0.2.</span> <span class="nav-text">转字符串string</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#转boolean（记住五个falsy值）"><span class="nav-number">1.0.3.</span> <span class="nav-text">转boolean（记住五个falsy值）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#转number"><span class="nav-number">1.0.4.</span> <span class="nav-text">转number</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#宽度与高度"><span class="nav-number">1.</span> <span class="nav-text">宽度与高度</span></a></li></ol></div>
             
 
           </div>
