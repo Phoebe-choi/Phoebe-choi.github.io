@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JSONP," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Phoebe's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="页面数据交互的发展过程付款是我们日常中常见的一种金钱交易，用户在页面中点击付款按钮，网页提交请求给服务器，服务器收到请求后在数据库对金额进行扣减，然后将消息返回给页面，告诉用户给付款成功。 在讲JSONP之前，我们先看看以前的前端程序员是用什么办法实现一个网页数据交互过程的。 用form表单向服务器发起请求 页面代码如下：用表单提交post请求，请求路径为/pay 1234567891011121">
+<meta name="keywords" content="JSONP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决ajax跨域问题之JSONP">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/解决ajax跨域问题之JSONP/index.html">
+<meta property="og:site_name" content="Phoebe&#39;s Blog">
+<meta property="og:description" content="页面数据交互的发展过程付款是我们日常中常见的一种金钱交易，用户在页面中点击付款按钮，网页提交请求给服务器，服务器收到请求后在数据库对金额进行扣减，然后将消息返回给页面，告诉用户给付款成功。 在讲JSONP之前，我们先看看以前的前端程序员是用什么办法实现一个网页数据交互过程的。 用form表单向服务器发起请求 页面代码如下：用表单提交post请求，请求路径为/pay 1234567891011121">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2018/01/22/5a65ed08b34de.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/22/5a65ed0df074a.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/22/5a66029d109d4.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/22/5a66029e5fc3c.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66c2573ba1c.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66c96df0bc7.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66cb3ac58b7.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66cba04b9db.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66cc1e4bdf5.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66ccd163815.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66dad331253.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66d68b03de4.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66e5161eaf8.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66e0f0065c6.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66e65395f01.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66e6facc151.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66e7833967c.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66ecdb48bb2.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a66ec4fdd556.png">
+<meta property="og:image" content="https://i.loli.net/2018/01/23/5a67036c3c384.png">
+<meta property="og:updated_time" content="2018-01-23T14:11:24.019Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="解决ajax跨域问题之JSONP">
+<meta name="twitter:description" content="页面数据交互的发展过程付款是我们日常中常见的一种金钱交易，用户在页面中点击付款按钮，网页提交请求给服务器，服务器收到请求后在数据库对金额进行扣减，然后将消息返回给页面，告诉用户给付款成功。 在讲JSONP之前，我们先看看以前的前端程序员是用什么办法实现一个网页数据交互过程的。 用form表单向服务器发起请求 页面代码如下：用表单提交post请求，请求路径为/pay 1234567891011121">
+<meta name="twitter:image" content="https://i.loli.net/2018/01/22/5a65ed08b34de.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/解决ajax跨域问题之JSONP/"/>
+
+
+
+
+
+  <title>解决ajax跨域问题之JSONP | Phoebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Phoebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">求知若饥，虚心若愚</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-works">
+          <a href="/works" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            作品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/解决ajax跨域问题之JSONP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Phoebe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Phoebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">解决ajax跨域问题之JSONP</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T22:06:58+08:00">
+                2018-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JSONP/" itemprop="url" rel="index">
+                    <span itemprop="name">JSONP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="页面数据交互的发展过程"><a href="#页面数据交互的发展过程" class="headerlink" title="页面数据交互的发展过程"></a>页面数据交互的发展过程</h3><p>付款是我们日常中常见的一种金钱交易，用户在页面中点击付款按钮，网页提交请求给服务器，服务器收到请求后在数据库对金额进行扣减，然后将消息返回给页面，告诉用户给付款成功。</p>
+<p>在讲JSONP之前，我们先看看以前的前端程序员是用什么办法实现一个网页数据交互过程的。</p>
+<h3 id="用form表单向服务器发起请求"><a href="#用form表单向服务器发起请求" class="headerlink" title="用form表单向服务器发起请求"></a>用form表单向服务器发起请求</h3><ul>
+<li><p>页面代码如下：用表单提交post请求，请求路径为/pay</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h5&gt;您的账户余额是&lt;span id=&quot;amount&quot;&gt;&amp;&amp;&amp;amount&amp;&amp;&amp;&lt;/span&gt;&lt;/h5&gt;</span><br><span class="line">&lt;form action=&quot;/pay&quot; method=&quot;post&quot;&gt;//用表单提交post请求，请求路径为/pay</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;付款&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务器代码</p>
+</li>
+</ul>
+<p>当请求的路径为/pay时，数据库进行扣减金额一块钱，然后给页面返回success<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">if(path === &apos;/pay&apos;&amp;&amp; method.toUpperCase()===&apos;POST&apos;)&#123;</span><br><span class="line">//如果的路径是path，而且你的方法是post</span><br><span class="line">    var amount = fs.readFileSync(&apos;./db&apos;, &apos;utf8&apos;) //100</span><br><span class="line">    //那么我就去读一下你当前有多少钱</span><br><span class="line">    var newAmount = amount - 1</span><br><span class="line">    //然后把这个钱扣一块，扣了一块之后就是99</span><br><span class="line">    fs.writeFileSync(&apos;./db&apos;, newAmount)</span><br><span class="line">    //然后再把剩下的钱存到数据库里</span><br><span class="line">    response.write(&apos;success&apos;)</span><br><span class="line">    //然后告诉你扣费成功了</span><br><span class="line">    response.end()</span><br><span class="line">    //结束</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>当我们点击付款的时候可以看到扣费了一块钱<br><img src="https://i.loli.net/2018/01/22/5a65ed08b34de.png" alt="image"></p>
+<p>再回到我们之前自己用文件db存的一个数据库，库里就只有一个数字100，上面点击扣费后，数据库里的余额剩99了<br><img src="https://i.loli.net/2018/01/22/5a65ed0df074a.png" alt="image"></p>
+<p>再来模拟一下失败付款扣费的方案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if(path === &apos;/pay&apos;&amp;&amp; method.toUpperCase()===&apos;POST&apos;)&#123;</span><br><span class="line">    var amount = fs.readFileSync(&apos;./db&apos;, &apos;utf8&apos;) //100</span><br><span class="line">    var newAmount = amount - 1</span><br><span class="line">    if(Math.random()&gt;0.5&#123;</span><br><span class="line">        fs.writeFileSync(&apos;./db&apos;, newAmount)</span><br><span class="line">        response.write(&apos;success&apos;)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        response.write(&apos;fail&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">  response.end()</span><br></pre></td></tr></table></figure>
+<p><strong>这里有一个比较重要的细节</strong>，在点击付款按钮的form表单，一旦提交了，就一定会刷新当前页面，不管是成功付款还是失败付款，都会刷新页面。这样用户体验效果就很差了，我们可以用另外一种方式优化一下，但是这个方式也是比较古老的，就是用<code>iframe</code>来实现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;h5&gt;您的账户余额是&lt;span id=&quot;amount&quot;&gt;&amp;&amp;&amp;amount&amp;&amp;&amp;&lt;/span&gt;&lt;/h5&gt;</span><br><span class="line">&lt;form action=&quot;/pay&quot; method=&quot;post&quot; target=&quot;result&quot;&gt;</span><br><span class="line">    &lt;input tpe=&quot;submit&quot; value=&quot;付款&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;iframe name=&quot;result&quot; src=&quot;about:blank&quot; frameborder=&quot;0&quot; height=200&gt;&lt;/iframe&gt;</span><br><span class="line">//使用iframe来实现，这个方法也很古老</span><br></pre></td></tr></table></figure></p>
+<h3 id="img发请求法"><a href="#img发请求法" class="headerlink" title="img发请求法"></a>img发请求法</h3><ul>
+<li>浏览器有一个特点，一旦发现你在内存里面创建了一个img，它就会去请求这个img的source.</li>
+<li>这种办法有一个缺陷，就是没办法去post，所以它一定会去get</li>
+<li>使用用img发起一个请求，服务器会同时执行两句话</li>
+</ul>
+<p><img src="https://i.loli.net/2018/01/22/5a66029d109d4.png" alt="image"></p>
+<p><img src="https://i.loli.net/2018/01/22/5a66029e5fc3c.png" alt="image"></p>
+<ul>
+<li><p>页面代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">用图片发起get请求</span><br><span class="line">button.addEventListener(&apos;click&apos;, (e) =&gt; &#123;</span><br><span class="line">    let image = document.createElement(&apos;img&apos;)</span><br><span class="line">    image.src = &apos;/pay&apos;</span><br><span class="line">    image.onload = function() &#123;</span><br><span class="line">      alert(&apos;打钱成功&apos;)</span><br><span class="line">      amount.innerText = amount.innerText - 1</span><br><span class="line">    &#125;</span><br><span class="line">    image.onerror = function() &#123;</span><br><span class="line">      alert(&apos;打钱失败&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务器代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if(Math.random()&gt;0.5&#123;</span><br><span class="line">    fs.writeFileSync(&apos;./db&apos;, newAmount)</span><br><span class="line">    response.setHeader(&apos;Content-Type&apos;,&apos;image/ipg&apos;)</span><br><span class="line">    response.statusCode = 200</span><br><span class="line">    response.write(&apos;fs.writeFileSync(&apos;./dog.jpg&apos;))</span><br><span class="line">    //只能传送一张真的图片，才能让服务器成功发起请求</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    response.status=400</span><br><span class="line">    response.write(&apos;fail&apos;)</span><br><span class="line">&#125;</span><br><span class="line">response.end()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="script发请求法-SRJ"><a href="#script发请求法-SRJ" class="headerlink" title="script发请求法(SRJ)"></a>script发请求法(SRJ)</h3><ul>
+<li>尝试用script发起请求，但是到服务器运行后发现没有丝毫变化</li>
+</ul>
+<p><img src="https://i.loli.net/2018/01/23/5a66c2573ba1c.png" alt="image"></p>
+<p>通过其他前端工程师不断地尝试，发现只有把<code>&lt;script&gt;</code>放到body(页面)里面，服务器才能发起请求，与img发起请求法不同，img是不需要这一步的，直接就可以向服务器发请求，而用<code>script</code>请求法是需要这一步的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">button.addEventListener(&apos;click&apos;, (e) =&gt; &#123;</span><br><span class="line">let script = document.createElement(&apos;script&apos;)</span><br><span class="line">    script.src = &apos;/pay&apos;</span><br><span class="line">    document.body.appendChild(script)</span><br><span class="line">    script.onload=function()&#123;</span><br><span class="line">        alert(&apos;success&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">    script.onerror = function() &#123;</span><br><span class="line">        alert(&apos;fail&apos;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">if(path === &apos;/pay&apos;)&#123;</span><br><span class="line">    var amount = fs.readFileSync(&apos;./db&apos;, &apos;utf8&apos;) //100</span><br><span class="line">    var newAmount = amount - 1</span><br><span class="line">    if(Math.random()&gt;0.5&#123;</span><br><span class="line">        fs.writeFileSync(&apos;./db&apos;, newAmount)</span><br><span class="line">        response.setHeader(&apos;Content-Type&apos;, &apos;application/javascript&apos;)</span><br><span class="line">        response.statusCode = 200</span><br><span class="line">    response.write(&apos;&apos;)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        response.status=400</span><br><span class="line">        response.write(&apos;fail&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">  response.end()</span><br></pre></td></tr></table></figure>
+<p>通过以上方法，我们可以用<code>script</code>成功向服务器发起请求，比用img发起请求法要快一些，不需要再返回一张图片了。</p>
+<p>但是，这种方法有一个问题还没解决。就是当我们向服务器请求了<code>script</code>之后，这个<code>script</code>是会执行的呀。什么叫会执行？请看下图：</p>
+<p><img src="https://i.loli.net/2018/01/23/5a66c96df0bc7.png" alt="image"></p>
+<p><img src="https://i.loli.net/2018/01/23/5a66cb3ac58b7.png" alt="image"></p>
+<p>我们尝试一下把服务器代码的空字符串换一下</p>
+<p><img src="https://i.loli.net/2018/01/23/5a66cba04b9db.png" alt="image"></p>
+<p>下图可以看到，当我们执行完多出来的<code>script</code>的内容后，才会继续执行onload事件(success)</p>
+<p><img src="https://i.loli.net/2018/01/23/5a66cc1e4bdf5.png" alt="image"></p>
+<p><img src="https://i.loli.net/2018/01/23/5a66ccd163815.png" alt="image"></p>
+<p>当我们点击打钱，就会创建一个<code>script</code>标签，由于页面中多出了一个<code>script</code>，于是浏览器就会执行pay这个<code>script</code>里面的内容。也就是<code>alert</code>里面的”我是pay”，然后才继续执行onload事件。</p>
+<p>既然先执行响应内容，然后再调用onload，连续触发两次alert事件，如此多此一举。我们为何不直接把所有的内容都放进pay里面？同时本地页面监听script标签的onload，onerror事件来删除动态创建的script标签，节省内存。</p>
+<p><img src="https://i.loli.net/2018/01/23/5a66dad331253.png" alt="image"></p>
+<p><img src="https://i.loli.net/2018/01/23/5a66d68b03de4.png" alt="image"></p>
+<p><strong>这个方案就叫做SRJ(Server Rendered JavaScript)，服务器返回的JavaScript</strong></p>
+<ul>
+<li>一些重要的操作，比如付款、取款，都不要用get来操作，一律都用post操作。</li>
+</ul>
+<h3 id="用SRJ实现不同的网站之间（不同的域名）的数据交互"><a href="#用SRJ实现不同的网站之间（不同的域名）的数据交互" class="headerlink" title="用SRJ实现不同的网站之间（不同的域名）的数据交互"></a>用SRJ实现不同的网站之间（不同的域名）的数据交互</h3><p>如果想让当前的网站跟另一个服务器，另一个域名下的接口交流，怎么实现呢？</p>
+<ul>
+<li>首先我们设置两个hosts</li>
+</ul>
+<p><img src="https://i.loli.net/2018/01/23/5a66e5161eaf8.png" alt="image"></p>
+<ul>
+<li>再开启两个sever (tip：可以用PORT来设置端口)</li>
+</ul>
+<p><img src="https://i.loli.net/2018/01/23/5a66e0f0065c6.png" alt="image"></p>
+<p><img src="https://i.loli.net/2018/01/23/5a66e65395f01.png" alt="image"></p>
+<ul>
+<li>现在打开网页访问我们设置的第一个网站<code>frank.com:8001</code></li>
+</ul>
+<p><img src="https://i.loli.net/2018/01/23/5a66e6facc151.png" alt="image"></p>
+<p>再把<code>jack.com:8002</code>也打开</p>
+<p><img src="https://i.loli.net/2018/01/23/5a66e7833967c.png" alt="image"></p>
+<p>由于我们在刚刚写了<code>127.0.0.1 frank.com</code>和<code>127.0.0.1 jack.com</code> 所以相当于<code>127.0.0.1 8001</code>和<code>127.0.0.1 8002</code></p>
+<ul>
+<li>现在我们让<code>frank.com:8001</code>的前端去访问<code>jack.com:8002</code>的后端<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">button.addEventListener(&apos;click&apos;, (e) =&gt; &#123;</span><br><span class="line">    let script = document.creatElement(&apos;script&apos;)</span><br><span class="line">    script.src = &apos;http://jack.com:8002/pay&apos;</span><br><span class="line">    document.body.appendChild(script)</span><br><span class="line">    script.onload = function(e) &#123;</span><br><span class="line">      e.currentTarget.remove()</span><br><span class="line">    &#125;</span><br><span class="line">    script.onerror = function(e) &#123;</span><br><span class="line">      alert(&apos;fail&apos;)</span><br><span class="line">      e.currentTarget.remove()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>回到<code>frank.com</code>页面</p>
+<p><img src="https://i.loli.net/2018/01/23/5a66ecdb48bb2.png" alt="image"></p>
+<p><img src="https://i.loli.net/2018/01/23/5a66ec4fdd556.png" alt="image"></p>
+<p>这就是两个网站之间通过SRJ交流</p>
+<p><em>以上就是一个成用数据库实现一个付款扣费的方案，和失败的付款扣费方案，但是上面的方法是旧的时代前后端用数据库配合的方法，下面我们用现在流行的方案再来实现一遍</em></p>
+<hr>
+<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP(JSON with Padding) 是 json 的一种”使用模式”，可以让网页从别的域名（网站）那获取资料，即跨域读取数据。</p>
+<p>上面的SRJ方案有一个很大的缺陷，就是双方网站的代码耦合度太高，为了代码的解耦，可以使用JSONP方案。</p>
+<p>JSONP完整过程：</p>
+<ul>
+<li>请求方：前端程序员(浏览器)<blockquote>
+<p>请求方动态创建一个<code>script</code>标签，<code>script</code>的src路径指向响应方，同时传一个查询参数callback函数，根据约定必须是callback，函数名可随机化</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">button.addEventListener(&apos;click&apos;, (e) =&gt; &#123;</span><br><span class="line">let script = document.createElement(&apos;script&apos;)</span><br><span class="line">//创建一个随机的函数名</span><br><span class="line">let functionName =&apos;tina&apos;+parseInt(Math.random()*100000,10);</span><br><span class="line">script.src = &apos;http://xxx.com:8002/pay?callback=&apos; + functionName; </span><br><span class="line">//xxx.com为响应网站的域名，8002为响应网站的端口号</span><br><span class="line"></span><br><span class="line">window[callback] = function(result)&#123; //定义函数</span><br><span class="line">        if(result === &apos;success&apos;)&#123;</span><br><span class="line">            amount.innerText = amount.innerText - 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    script.onload = function(e)&#123;</span><br><span class="line">        e.currentTarget.remove();//执行结束删除script标签</span><br><span class="line">        delete window[callback]; //执行结束删除函数</span><br><span class="line">    &#125;</span><br><span class="line">    script.onerror = function (e) &#123;</span><br><span class="line">        alert(&apos;fail&apos;);</span><br><span class="line">        e.currentTarget.remove();//执行结束删除script标签</span><br><span class="line">        delete window[callback];//执行结束删除函数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>响应方：后端程序员(服务器) <blockquote>
+<p>.响应方根据查询参数callback找到函数名后，回调这个函数，做出响应。有下面两种形式：<br><br>函数名.call(undefined,’你要的数据’)<br><br>函数名(‘你要的数据’)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//服务器端只需要这样就可以了，后台并不关心你写的是什么函数名字</span><br><span class="line">response.write(`</span><br><span class="line">   $&#123;query.callback&#125;.call(undefined, &apos;success&apos;)</span><br><span class="line">`)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>浏览器接收到响应后，就会执行<code>函数名.call(undefined,&#39;你要的数据&#39;)</code><br><br>那么请求方得到了响应的数据，就会返回到页面上来</p>
+<p>大致流程如下：</p>
+<blockquote>
+<p>JSONP<br><br>请求方：前端程序员(浏览器)<br><br>响应方：后端程序员(服务器)<br></p>
+<ol>
+<li>请求方创建script标签，src路径指向响应方，同时传一个查询参数<code>?callback=&#39; + functionName;</code></li>
+<li>响应方根据查询参数callback，构造形如下</li>
+</ol>
+<ul>
+<li>函数名.call(undefined,’你要的数据’)</li>
+<li>函数名(‘你要的数据’)<br><br>这样的响应</li>
+</ul>
+<ol>
+<li>浏览器接收到响应后，就会执行<code>函数名.call(undefined,&#39;你要的数据&#39;)</code></li>
+<li>那么请求方就知道了他要的数据<br></li>
+</ol>
+<p>这就是JSONP</p>
+</blockquote>
+<p>上面的JSONP太复杂了，有没有更简单的办法？有的，用jQuery实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  url: &quot;http://想访问的另一个网站:端口号/pay&quot;,</span><br><span class="line">  dataType: &quot;jsonp&quot;,</span><br><span class="line">  success: function (response) &#123;</span><br><span class="line">    if(response === &apos;success&apos;) &#123;</span><br><span class="line">    amount.innerText = amount.innerText - 1 </span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这里值得注意一下JQuery封装的JSONP虽然起了一个与ajax相近的名字，但是与ajax没有任何关系，它只是一个动态的<code>script</code>，<code>script</code>标签是不受域名限制的，而Ajax是受域名限制的。</p>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><ul>
+<li>JSON的语法就一个特点，就是要加双引号，这一部分就叫JSON，JSON前面这一部分叫做左padding，右边叫做右padding，中间是jSON。这个技术名字就叫做：<blockquote>
+<p>JSON + padding = JSONP  也可以理解为</p>
+<p>String + padding = StringP</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2018/01/23/5a67036c3c384.png" alt="image"></p>
+<p>可以简单的理解为 带callback的json就是jsonp.</p>
+<h3 id="一个面试题"><a href="#一个面试题" class="headerlink" title="一个面试题"></a>一个面试题</h3><p>请问JSONP为什么不支持POST请求？</p>
+<ul>
+<li>JSONP通过动态创建script来实现的</li>
+<li>动态创建script的时候，只能用get，没办法用post</li>
+</ul>
+<p>完~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JSONP/" rel="tag"><i class="fa fa-tag"></i>
+
+ JSONP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/17/一些CSS宽度与高度的理解/" rel="next" title="一些CSS宽度与高度的理解">
+                <i class="fa fa-chevron-left"></i> 一些CSS宽度与高度的理解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Phoebe" />
+            
+              <p class="site-author-name" itemprop="name">Phoebe</p>
+              <p class="site-description motion-element" itemprop="description">standing on shoulders of giants</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Phoebe-choi" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/48f6d07b9b66" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-globe"></i>简书</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面数据交互的发展过程"><span class="nav-number">1.</span> <span class="nav-text">页面数据交互的发展过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用form表单向服务器发起请求"><span class="nav-number">2.</span> <span class="nav-text">用form表单向服务器发起请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#img发请求法"><span class="nav-number">3.</span> <span class="nav-text">img发请求法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#script发请求法-SRJ"><span class="nav-number">4.</span> <span class="nav-text">script发请求法(SRJ)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用SRJ实现不同的网站之间（不同的域名）的数据交互"><span class="nav-number">5.</span> <span class="nav-text">用SRJ实现不同的网站之间（不同的域名）的数据交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">6.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON"><span class="nav-number">7.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个面试题"><span class="nav-number">8.</span> <span class="nav-text">一个面试题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Phoebe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
