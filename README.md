@@ -10,7 +10,7 @@
 
 3. 安装git（官网下载安装）
 
-4. 安装hexo了，方法：打开git，输入cd运行npm install -g hexo（要翻墙）
+4. 安装hexo了，方法：打开git，输入cd运行`npm install -g hexo`（要翻墙）
 
 ### 开始搭建
 
